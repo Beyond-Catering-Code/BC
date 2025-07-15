@@ -16,7 +16,7 @@ export default function BlogPage() {
           </p>
           <div className="relative w-full aspect-[16/7] rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-100/50 transition-all duration-500 group">
             <Image
-              src="/images/image2.JPG"
+              src="/images/blog.JPG"
               alt="Catering display"
               fill
               className="object-cover object-[center_62%] transition-transform duration-700 group-hover:scale-[1.025]"
