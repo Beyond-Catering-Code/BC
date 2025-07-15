@@ -24,7 +24,7 @@ const services = [
   {
     title: 'Private Events Catering',
     description: 'Make your special occasions unforgettable with our bespoke catering services.',
-    image: '/images/image3.JPG',
+    image: '/images/private.jpg',
     href: '/services/private',
     icon: Cake,
   },
@@ -66,7 +66,7 @@ const ServicesPage = () => {
         </div>
 
         {/* Services Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service) => (
               <div key={service.title} className="relative h-[32rem] rounded-2xl overflow-hidden group">
@@ -92,7 +92,7 @@ const ServicesPage = () => {
 
         {/* Other Services Section */}
         <div className="bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
                 {otherServices.map((service) => (

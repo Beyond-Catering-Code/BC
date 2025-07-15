@@ -35,13 +35,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/30 sm:bg-black/40" />
 
-        <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-6 z-10">
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-6 z-10 pt-50">
           <div className="opacity-0 translate-y-8 animate-[fadeUp_1.2s_ease-out_1s_forwards] max-w-2xl mx-auto">
             <h1 className="text-white text-[1.75rem] sm:text-4xl md:text-5xl font-bold leading-snug">
               Your Guests Deserve More<br />Than Just Food
             </h1>
             <p className="mt-4 text-white/90 text-base sm:text-lg font-medium leading-relaxed">
-              Private villas. Royal events.<br />
               We turn meals into memories trusted by Dubai's most discerning hosts.
             </p>
           </div>

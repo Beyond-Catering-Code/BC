@@ -57,9 +57,17 @@ const eventFeatures = [
   },
 ];
 
+const processSteps = [
+  { step: 1, title: 'Consultation & Vision', description: 'We start with a personal consultation to understand your event, preferences, and expectations — from guest count to atmosphere.' },
+  { step: 2, title: 'Menu Curation', description: "Our chefs design a bespoke menu tailored to your event — whether it's a cocktail soirée, a birthday brunch, or an elegant dinner." },
+  { step: 3, title: 'Tasting & Finalization', description: "You'll have the opportunity to sample the menu, make adjustments, and approve the final experience." },
+  { step: 4, title: 'Event Coordination', description: 'From setup to service, our team handles every detail — staffing, styling, food presentation, and flow.' },
+  { step: 5, title: 'Flawless Execution', description: 'On the day, we deliver more than just food. We deliver a polished experience your guests will remember.' },
+];
+
 const PrivateEventsPage = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white">
       <Head>
         <title>Private Events Catering - Beyond Catering</title>
         <meta name="description" content="Exquisite catering services for your private events, from intimate dinners to milestone celebrations." />
@@ -93,7 +101,7 @@ const PrivateEventsPage = () => {
         </section>
 
         {/* Private Event Services Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-800">Our Private Event Services</h2>
             <p className="mt-4 max-w-3xl mx-auto text-gray-600">Elevate your special occasions with our comprehensive event catering services.</p>
@@ -155,15 +163,18 @@ const PrivateEventsPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-800">How It Works</h2>
             <p className="mt-4 text-gray-600">We make hosting effortless with a seamless, step-by-step approach.</p>
-            <div className="mt-16 relative">
-              <div className="absolute top-5 left-0 w-full h-0.5 bg-gray-200 hidden md:block" />
-              <div className="grid md:grid-cols-5 gap-8 relative">
-                  <div className="flex flex-col items-center text-center z-10"><div className="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">1</div><div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 w-full"><h4 className="font-bold text-lg text-gray-900">Consultation & Vision</h4><p className="text-gray-600 mt-2">We start with a personal consultation to understand your event, preferences, and expectations — from guest count to atmosphere.</p></div></div>
-                  <div className="flex flex-col items-center text-center z-10"><div className="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">2</div><div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 w-full"><h4 className="font-bold text-lg text-gray-900">Menu Curation</h4><p className="text-gray-600 mt-2">Our chefs design a bespoke menu tailored to your event — whether it's a cocktail soirée, a birthday brunch, or an elegant dinner.</p></div></div>
-                  <div className="flex flex-col items-center text-center z-10"><div className="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">3</div><div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 w-full"><h4 className="font-bold text-lg text-gray-900">Tasting & Finalization</h4><p className="text-gray-600 mt-2">You'll have the opportunity to sample the menu, make adjustments, and approve the final experience.</p></div></div>
-                  <div className="flex flex-col items-center text-center z-10"><div className="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">4</div><div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 w-full"><h4 className="font-bold text-lg text-gray-900">Event Coordination</h4><p className="text-gray-600 mt-2">From setup to service, our team handles every detail — staffing, styling, food presentation, and flow.</p></div></div>
-                  <div className="flex flex-col items-center text-center z-10"><div className="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">5</div><div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 w-full"><h4 className="font-bold text-lg text-gray-900">Flawless Execution</h4><p className="text-gray-600 mt-2">On the day, we deliver more than just food. We deliver a polished experience your guests will remember.</p></div></div>
-              </div>
+            <div className="mt-16 grid md:grid-cols-5 gap-8">
+              {processSteps.map((item) => (
+                <div key={item.step} className="flex flex-col items-center text-center">
+                  <div className="bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-6">
+                    {item.step}
+                  </div>
+                  <div className="bg-white p-6 rounded-lg border border-gray-200 w-full shadow-sm">
+                    <h4 className="font-bold text-lg text-gray-900">{item.title}</h4>
+                    <p className="text-gray-600 mt-2">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

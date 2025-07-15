@@ -77,7 +77,7 @@ const processSteps = [
 
 const CorporateCateringPage = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white">
       <Head>
         <title>Corporate Catering Solutions - Beyond Catering</title>
         <meta name="description" content="Comprehensive corporate catering services, from daily meal delivery to full canteen setup." />
@@ -111,7 +111,7 @@ const CorporateCateringPage = () => {
         </section>
 
         {/* Catering Options Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-800">Our Corporate Catering Options</h2>
             <p className="mt-4 max-w-3xl mx-auto text-gray-600">Two comprehensive approaches to corporate food service, tailored to your needs.</p>
@@ -165,15 +165,15 @@ const CorporateCateringPage = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-800">Our Catering Services</h2>
             <p className="mt-4 text-gray-600">Complete end-to-end catering solutions for your company.</p>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {cateringServices.map((service, index) => (
-                <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 flex flex-col items-center text-center">
-                  <div className="bg-white border-2 border-gray-200 rounded-md p-3 mb-4 inline-block">
-                    <service.icon size={32} className="text-gray-800" />
+                <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-left">
+                  <div className="inline-block bg-blue-50 text-blue-800 rounded-full p-3 mb-4">
+                    <service.icon size={32} />
                   </div>
                   <h4 className="font-bold text-lg text-gray-800">{service.title}</h4>
                   <p className="text-gray-600 mt-2">{service.description}</p>
@@ -184,25 +184,22 @@ const CorporateCateringPage = () => {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-gray-900">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white">Our Process</h2>
-            <p className="mt-4 text-gray-300">We make corporate catering simple with our streamlined process.</p>
-            <div className="mt-16 relative">
-              <div className="absolute top-5 left-0 w-full h-0.5 bg-gray-700 hidden md:block" />
-              <div className="grid md:grid-cols-3 gap-8 relative">
-                {processSteps.map((item) => (
-                  <div key={item.step} className="flex flex-col items-center text-center">
-                    <div className="bg-blue-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl z-10">
-                      {item.step}
-                    </div>
-                    <div className="bg-white p-6 rounded-lg mt-8 w-full">
-                      <h4 className="font-bold text-lg text-gray-900">{item.title}</h4>
-                      <p className="text-gray-600 mt-2">{item.description}</p>
-                    </div>
+            <h2 className="text-3xl font-bold text-gray-800">How It Works</h2>
+            <p className="mt-4 text-gray-600">We make corporate catering simple with our streamlined process.</p>
+            <div className="mt-16 grid md:grid-cols-3 gap-8">
+              {processSteps.map((item) => (
+                <div key={item.step} className="flex flex-col items-center text-center">
+                  <div className="bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-6">
+                    {item.step}
                   </div>
-                ))}
-              </div>
+                  <div className="bg-white p-6 rounded-lg border border-gray-200 w-full shadow-sm">
+                    <h4 className="font-bold text-lg text-gray-900">{item.title}</h4>
+                    <p className="text-gray-600 mt-2">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -7,26 +7,31 @@ import { useState, useEffect, useRef } from 'react';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-
     window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current);
+    }
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 200);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-sm' : ''}`}>
@@ -43,23 +48,22 @@ const Navbar = () => {
           <div className="hidden md:flex items-center justify-center flex-1 gap-14 text-[16px] font-semibold tracking-wide text-gray-800">
             <Link href="/about" className="hover:text-blue-800 transition">About</Link>
 
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="hover:text-blue-800 transition flex items-center gap-1"
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/services"
+                className="hover:text-blue-800 transition"
               >
                 Services
-                <svg className="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              </Link>
               {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 rounded-md bg-white shadow-md z-50 transition-all duration-200">
-                  <Link href="/services" className="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 transition">All Services</Link>
-                  <div className="border-t border-gray-100" />
-                  <Link href="/services/corporate" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Corporate Catering</Link>
-                  <Link href="/services/private" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Private Events</Link>
-                  <Link href="/services/drop-off" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Drop-Off Catering</Link>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md bg-white shadow-md z-50 transition-all duration-200">
+                  <Link href="/services/corporate" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Corporate Catering</Link>
+                  <Link href="/services/private" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Private Events</Link>
+                  <Link href="/services/drop-off" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Drop-Off Catering</Link>
                 </div>
               )}
             </div>
