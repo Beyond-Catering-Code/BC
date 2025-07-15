@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
@@ -28,29 +29,19 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${
-        scrolled ? 'shadow-sm' : ''
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative h-8 w-32 sm:h-10 sm:w-40">
-              <Image
-                src="/images/logo.png"
-                alt="Beyond Catering"
-                fill
-                className="object-contain"
-                priority
-              />
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative h-10 w-40 sm:h-12 sm:w-48">
+              <Image src="/images/logo.png" alt="Beyond Catering" fill className="object-contain" priority />
             </div>
           </Link>
 
-          {/* Nav Links */}
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-800">
-            <Link href="/blog" className="hover:text-blue-800 transition">Blog</Link>
+          {/* Links */}
+          <div className="hidden md:flex items-center justify-center flex-1 gap-14 text-[16px] font-semibold tracking-wide text-gray-800">
+            <Link href="/about" className="hover:text-blue-800 transition">About</Link>
 
             <div className="relative" ref={dropdownRef}>
               <button
@@ -68,12 +59,12 @@ const Navbar = () => {
                   <div className="border-t border-gray-100" />
                   <Link href="/services/corporate" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Corporate Catering</Link>
                   <Link href="/services/private" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Private Events</Link>
-                  <Link href="/services/drop-off" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Drop off Catering</Link>
+                  <Link href="/services/drop-off" className="block px-4 py-2 text-sm hover:bg-blue-100 transition">Drop-Off Catering</Link>
                 </div>
               )}
             </div>
 
-            <Link href="/about" className="hover:text-blue-800 transition">About</Link>
+            <Link href="/blog" className="hover:text-blue-800 transition">Blog</Link>
             <Link href="/contact" className="hover:text-blue-800 transition">Contact</Link>
           </div>
 
@@ -92,4 +83,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -1,7 +1,18 @@
+'use client';
+
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 export default function Home() {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    }, 4000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,23 +23,49 @@ export default function Home() {
       </Head>
 
       <Navbar />
-
+ 
       {/* Hero Section */}
       <section className="relative h-screen w-full">
-        <img
+        <Image
           src="/images/Hero.JPG"
           alt="Beyond Catering Hero"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          className="absolute inset-0 object-cover w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/10 sm:bg-black/20" />
+        <div className="absolute inset-0 bg-black/30 sm:bg-black/40" />
 
-        {/* Scroll Arrow */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 animate-bounce text-white opacity-80">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-6 z-10">
+          <div className="opacity-0 translate-y-8 animate-[fadeUp_1.2s_ease-out_1s_forwards] max-w-2xl mx-auto">
+            <h1 className="text-white text-[1.75rem] sm:text-4xl md:text-5xl font-bold leading-snug">
+              Your Guests Deserve More<br />Than Just Food
+            </h1>
+            <p className="mt-4 text-white/90 text-base sm:text-lg font-medium leading-relaxed">
+              Private villas. Royal events.<br />
+              We turn meals into memories trusted by Dubai's most discerning hosts.
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white opacity-80">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </section>
+
+      <style jsx global>{`
+        @keyframes fadeUp {
+          0% {
+            opacity: 0;
+            transform: translateY(32px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 
       {/* Why Section */}
       <section className="bg-white py-20 px-6">
@@ -37,9 +74,8 @@ export default function Home() {
             Why Dubai Chooses Beyond Catering
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-            It’s not just food. It’s the feeling your guests remember. At Beyond Catering, we don’t just cook — we craft unforgettable experiences.
+            It’s not just food. It’s the feeling your guests remember. At Beyond Catering, we craft unforgettable experiences with every plate.
           </p>
-
           <div className="grid gap-6 grid-cols-1 md:grid-cols-3 text-left">
             {[
               {
@@ -48,11 +84,11 @@ export default function Home() {
               },
               {
                 title: 'Flawless Presentation',
-                text: 'Each dish is plated like artwork. Every table setting, tray, and utensil reflects our obsession with visual perfection — worthy of Dubai’s top venues.',
+                text: 'Each dish is plated like artwork. Every table setting, tray, and utensil reflects our obsession with visual perfection, worthy of Dubai’s top venues.',
               },
               {
                 title: 'Trusted by the Best',
-                text: 'We’ve catered lunches at Burj Khalifa, celebrity weddings, and corporate events at Emirates Towers. But no matter the event — our quality never wavers.',
+                text: 'We’ve catered at Burj Khalifa, celebrity weddings, and corporate events at Emirates Towers. No matter the event, our quality never wavers.',
               },
             ].map(({ title, text }) => (
               <div key={title} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
@@ -71,8 +107,7 @@ export default function Home() {
             Our Prestige Clients
           </h2>
           <p className="text-gray-500 mb-10">Trusted by leading organizations</p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
             {[
               'Dubai_municipality.jpg',
               'RTA_Dubai_logo.png',
@@ -85,12 +120,13 @@ export default function Home() {
             ].map((file, i) => (
               <div
                 key={i}
-                className="bg-white hover:scale-105 hover:shadow-md transition-all duration-300 p-4 rounded-lg cursor-pointer"
+                className="relative h-16 sm:h-20 w-full bg-white flex items-center justify-center p-4 rounded-lg shadow hover:scale-105 transition"
               >
-                <img
+                <Image
                   src={`/clients/${file}`}
                   alt={file.split('.')[0]}
-                  className="mx-auto max-h-12 object-contain"
+                  fill
+                  className="object-contain"
                 />
               </div>
             ))}
