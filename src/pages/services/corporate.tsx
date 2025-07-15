@@ -104,7 +104,7 @@ const CorporateCateringPage = () => {
                 </button>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-                <Image src="/images/corp1.jpg" alt="Corporate Catering Setup" layout="fill" className="object-cover" />
+                <Image src="/images/corp1.jpg" alt="Corporate Catering Setup" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ const CorporateCateringPage = () => {
             <h2 className="text-3xl font-bold text-gray-800">Exquisite Catering Presentation</h2>
             <p className="mt-4 text-gray-600">We take pride in our elegant food displays and attention to detail.</p>
             <div className="mt-10 relative h-[32rem] rounded-lg overflow-hidden shadow-xl">
-              <Image src="/images/corp2.JPG" alt="Beautifully presented canapes" layout="fill" className="object-cover" />
+              <Image src="/images/corp2.JPG" alt="Beautifully presented canapes" fill className="object-cover" />
             </div>
             <div className="mt-4">
               <h4 className="font-bold text-lg text-gray-800">Beautifully Presented Corporate Canapés</h4>
