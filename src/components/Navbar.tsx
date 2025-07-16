@@ -6,31 +6,26 @@ import { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [menusOpen, setMenusOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const menusTimeout = useRef<NodeJS.Timeout | null>(null);
+  const servicesTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMouseEnter = () => {
-    if (dropdownTimeout.current) {
-      clearTimeout(dropdownTimeout.current);
-    }
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    dropdownTimeout.current = setTimeout(() => {
-      setDropdownOpen(false);
-    }, 200);
+  const handleHover = (
+    setter: React.Dispatch<React.SetStateAction<boolean>>,
+    timeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+    state: boolean
+  ) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setter(state);
   };
 
   return (
@@ -48,18 +43,40 @@ const Navbar = () => {
           <div className="hidden md:flex items-center justify-center flex-1 gap-14 text-[16px] font-semibold tracking-wide text-gray-800">
             <Link href="/about" className="hover:text-blue-800 transition">About</Link>
 
+            {/* Menus (dropdown, no arrow) */}
             <div
               className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => handleHover(setMenusOpen, menusTimeout, true)}
+              onMouseLeave={() => {
+                menusTimeout.current = setTimeout(() => setMenusOpen(false), 200);
+              }}
             >
-              <Link
-                href="/services"
-                className="hover:text-blue-800 transition"
-              >
-                Services
+              <Link href="/menus" className="hover:text-blue-800 transition">
+                Menus
               </Link>
-              {dropdownOpen && (
+              {menusOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-md bg-white shadow-md z-50 transition-all duration-200">
+                  <Link href="/menus/cold-canapes" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Cold Canapés</Link>
+                  <Link href="/menus/hot-canapes" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Hot Canapés</Link>
+                  <Link href="/menus/sweet-canapes" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Sweet Canapés</Link>
+                  <Link href="/menus/bowl-fork" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Bowl & Fork</Link>
+                  <Link href="/menus/platters" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Platters</Link>
+                  <Link href="/menus/salads" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Salads</Link>
+                  <Link href="/menus/main-course" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Main Course</Link>
+                </div>
+              )}
+            </div>
+
+            {/* Services (dropdown, no arrow) */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleHover(setServicesOpen, servicesTimeout, true)}
+              onMouseLeave={() => {
+                servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200);
+              }}
+            >
+              <Link href="/services" className="hover:text-blue-800 transition">Services</Link>
+              {servicesOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md bg-white shadow-md z-50 transition-all duration-200">
                   <Link href="/services/corporate" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Corporate Catering</Link>
                   <Link href="/services/private" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Private Events</Link>
