@@ -86,7 +86,7 @@ const Navbar = () => {
             </div>
 
             <Link href="/blog" className="hover:text-blue-800 transition">Blog</Link>
-            <Link href="/contact" className="hover:text-blue-800 transition">Contact</Link>
+            <Link href="/contact" className="hover:text-blue-800 transition">Contact us</Link>
           </div>
 
           {/* CTA */}
