@@ -45,7 +45,7 @@ export default function BlogPage() {
             <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/image3.JPG"
+                  src="/images/blog3.JPG"
                   alt="Outstanding Catering"
                   width={800}
                   height={600}
