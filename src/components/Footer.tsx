@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="inline-block">
-                <Image src="/images/logo.png" alt="Beyond Catering" width={150} height={40} className="object-contain brightness-0 invert" />
+              <Image src="/images/logo.png" alt="Beyond Catering" width={150} height={40} className="object-contain brightness-0 invert" />
             </Link>
             <p className="text-gray-400 pr-4">
               Premium catering services for corporate events, weddings, and private parties. Experience exceptional cuisine and service that goes beyond expectations.
@@ -52,4 +52,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
