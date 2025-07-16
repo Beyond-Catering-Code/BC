@@ -13,16 +13,13 @@ const ContactPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-64 md:h-80 w-full">
-        <Image
-          src="/images/corp1.JPG"
+      <section className="relative h-60 md:h-150 w-full overflow-hidden">
+        <img 
+          src="/images/contact1.JPG" 
           alt="Contact Us background"
-          fill
-          priority
-          className="absolute inset-0 object-cover w-full h-full"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
-        <div className="relative z-10 flex flex-col justify-center items-center text-center text-white h-full">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl font-bold">Contact Us</h1>
           <p className="mt-2 text-lg md:text-xl">Home • Contact Us</p>
         </div>
@@ -107,41 +104,39 @@ const ContactPage = () => {
       </section>
 
       {/* Online Form Section */}
-      <section className="relative py-16 md:py-24">
-        <Image
-            src="/images/weddings.jpg"
-            alt="Online form background"
-            fill
-            className="absolute inset-0 object-cover w-full h-full"
+      <section className="relative overflow-hidden">
+        <img 
+          src="/images/contact3.jpg" 
+          alt="Online form background"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-extrabold">Online Form</h2>
-        </div>
-        <div className="relative z-10 max-w-2xl mx-auto mt-12 px-4 sm:px-6 lg:px-8">
-          <form className="bg-white p-8 rounded-lg shadow-lg space-y-6">
-            <div>
-              <label htmlFor="name" className="sr-only">Your Name</label>
-              <input type="text" id="name" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+        <div className="relative z-10 py-16 md:py-24">
+            <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <form className="bg-white p-8 rounded-lg shadow-lg space-y-6">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-black text-center mb-6">Online Form</h2>
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400" />
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400" />
+                    </div>
+                    <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400" />
+                    </div>
+                    <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" placeholder="Enter your message" rows={5} className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400"></textarea>
+                    </div>
+                    <div className="text-center">
+                        <button type="submit" className="px-8 py-3 bg-blue-900 text-white font-semibold rounded-md hover:bg-blue-800 transition-colors">
+                            Submit Now
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div>
-              <label htmlFor="email" className="sr-only">Email Address</label>
-              <input type="email" id="email" placeholder="Email Address" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" />
-            </div>
-            <div>
-              <label htmlFor="phone" className="sr-only">Phone</label>
-              <input type="tel" id="phone" placeholder="Phone" className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" />
-            </div>
-            <div>
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea id="message" placeholder="Message" rows={5} className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
-            </div>
-            <div className="text-center">
-              <button type="submit" className="px-8 py-3 bg-blue-900 text-white font-semibold rounded-md hover:bg-blue-800 transition-colors">
-                Submit Now
-              </button>
-            </div>
-          </form>
         </div>
       </section>
 
