@@ -1,5 +1,3 @@
-// example: /pages/menus/cold-canapes/page.tsx
-
 'use client';
 
 import React from 'react';
@@ -13,12 +11,14 @@ const ColdCanapesPage = () => {
         Our cold canapés are a great option for the beginning of your event. Each bite is crafted with care using premium ingredients.
       </p>
 
-      {/* Replace this list with actual items later */}
+      {/* List of Cold Canapés */}
       <ul className="space-y-4 text-gray-800 list-disc list-inside">
         <li>Goat cheesecake, red onion jam, rosemary shortbread (v)</li>
         <li>Balsamic tomato, cashew pesto tartlet (v)</li>
-        <li>Heirloom tomato, burrata, basil tartine (V)</li>
-        {/* Add more here */}
+        <li>Heirloom tomato, burrata, basil tartine (v)</li>
+        <li>Smoked salmon, cucumber, dill cream cheese on rye</li>
+        <li>Mini caprese skewers with balsamic reduction (v)</li>
+        {/* Add more items here as needed */}
       </ul>
     </section>
   );

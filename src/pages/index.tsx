@@ -1,16 +1,22 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 
 export default function Home() {
+  const [showArrow, setShowArrow] = useState(false);
+
   useEffect(() => {
+    // Scroll down after 7 seconds
     const timeout = setTimeout(() => {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-    }, 3500);
-    return () => clearTimeout(timeout);
+    }, 7000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -68,40 +74,100 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Why Section */}
-      <section className="bg-[#F0F6FB] py-24 px-6">
+      {/* Outstanding Catering Section */}
+      <section className="bg-white py-28 px-6 sm:px-10">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+          <div className="text-left md:flex-1">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-snug tracking-tight">
+              Outstanding Catering
+            </h2>
+            <p className="text-lg text-gray-700 max-w-xl mb-8 leading-relaxed">
+              From corporate galas to private soirées, our bespoke menus and white-glove service bring sophistication to every table.
+            </p>
+            <a
+              href="/book"
+              className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-900 transition"
+            >
+              Book a Tasting
+            </a>
+          </div>
+          <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/blog3.JPG"
+                alt="Gourmet Plate"
+                width={800}
+                height={600}
+                layout="responsive"
+                objectFit="cover"
+                className="rounded-2xl"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Beyond Catering Section */}
+      <section className="py-28 px-6 sm:px-10 bg-gradient-to-b from-[#F0F4F8] to-[#FAFAF9] text-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 font-serif">
-            Why Dubai Chooses Beyond Catering
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
+            Why Beyond Catering?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-            It’s not just food. It’s the feeling your guests remember. At Beyond Catering, we craft unforgettable experiences with every plate.
+          <p className="text-lg sm:text-xl text-gray-600 italic max-w-2xl mx-auto mb-16 leading-relaxed">
+            Elegant cuisine. Timeless service. Discover what makes us Dubai’s trusted name in luxury catering.
           </p>
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 text-left">
+          <div className="grid gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: '5-Star Chefs, Curated Menus',
-                text: 'From traditional Emirati flavors to modern fusion, our team builds every menu from scratch — customized to your vision, guests, and event type.',
+                icon: '👨‍🍳',
+                title: 'Master Chefs',
+                desc: 'Culinary artists with Michelin-starred pedigree delivering food with finesse.',
               },
               {
-                title: 'Flawless Presentation',
-                text: 'Each dish is plated like artwork. Every table setting, tray, and utensil reflects our obsession with visual perfection, worthy of Dubai’s top venues.',
+                icon: '🥗',
+                title: 'Seasonal Ingredients',
+                desc: 'Each dish begins with thoughtfully selected, market-fresh produce.',
               },
               {
-                title: 'Trusted by the Best',
-                text: 'We’ve catered at Burj Khalifa, celebrity weddings, and corporate events at Emirates Towers. No matter the event, our quality never wavers.',
+                icon: '📋',
+                title: 'Tailored Menus',
+                desc: 'Every course designed for your theme, guests, and vision with no templates.',
               },
-            ].map(({ title, text }, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4 items-start">
-                <h3 className="text-lg font-semibold text-blue-900">{title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
+              {
+                icon: '🛎️',
+                title: 'Flawless Service',
+                desc: 'Friendly, discreet, and prepared for anything. Our team ensures elegance flows seamlessly.',
+              },
+              {
+                icon: '⏱️',
+                title: 'Punctual Execution',
+                desc: 'Precision that guarantees timely setup and service every time.',
+              },
+              {
+                icon: '🎯',
+                title: 'Details Obsessed',
+                desc: 'From plating finesse to scent and ambiance, no element is left unconsidered.',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#FAFAF9] border border-gray-200 rounded-2xl px-8 py-10 text-center shadow-[0_8px_24px_-6px_rgba(0,0,0,0.06)] hover:shadow-xl hover:scale-[1.015] transition duration-300 ease-in-out"
+              >
+                <div className="text-5xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Clients Section */}
+      {/* Trusted By Section */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 font-serif">

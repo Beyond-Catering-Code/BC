@@ -108,9 +108,7 @@ const MenusPage = () => {
             {menuSections.map((section, index) => (
               <div
                 key={section.title}
-                className={`flex flex-col-reverse items-center gap-12 md:flex-row ${
-                  index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className={`flex flex-col-reverse items-center gap-12 md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className="md:w-1/2 text-center">
                   <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4 font-[Playfair Display]">

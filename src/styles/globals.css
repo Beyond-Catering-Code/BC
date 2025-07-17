@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
   --background: #F0F6FB;
@@ -24,4 +23,8 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
+}
+
+a {
+  font-family: var(--font-heading);  /* Ensures Playfair Display for links */
 }

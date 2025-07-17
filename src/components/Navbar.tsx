@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-sm' : ''}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-xl' : ''}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -38,8 +38,8 @@ const Navbar = () => {
           </Link>
 
           {/* Links */}
-          <div className="hidden md:flex items-center justify-center flex-1 gap-14 text-[16px] font-semibold tracking-wide text-gray-800">
-            <Link href="/about" className="hover:text-blue-800 transition">About</Link>
+          <div className="hidden md:flex items-center justify-center flex-1 gap-12 text-[14px] sm:text-[15px] font-semibold tracking-wide text-gray-800">
+            <Link href="/about" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">About</Link>
 
             {/* Menus Dropdown */}
             <div
@@ -49,11 +49,11 @@ const Navbar = () => {
                 menusTimeout.current = setTimeout(() => setMenusOpen(false), 200);
               }}
             >
-              <Link href="/menus" className="hover:text-blue-800 transition">
+              <Link href="/menus" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">
                 Menus
               </Link>
               {menusOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-md bg-white shadow-md z-50 transition-all duration-200">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-md bg-white shadow-xl z-50 transition-all duration-200">
                   <Link href="/menus/salads" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Salads</Link>
                   <Link href="/menus/cold-canapes" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Cold Canapés</Link>
                   <Link href="/menus/hot-canapes" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Hot Canapés</Link>
@@ -73,9 +73,9 @@ const Navbar = () => {
                 servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200);
               }}
             >
-              <Link href="/services" className="hover:text-blue-800 transition">Services</Link>
+              <Link href="/services" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Services</Link>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md bg-white shadow-md z-50 transition-all duration-200">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md bg-white shadow-xl z-50 transition-all duration-200">
                   <Link href="/services/corporate" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Corporate Catering</Link>
                   <Link href="/services/private" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Private Events</Link>
                   <Link href="/services/drop-off" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Drop-Off Catering</Link>
@@ -83,15 +83,15 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link href="/blog" className="hover:text-blue-800 transition">Blog</Link>
-            <Link href="/contact" className="hover:text-blue-800 transition">Contact us</Link>
+            <Link href="/blog" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Blog</Link>
+            <Link href="/contact" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Contact us</Link>
           </div>
 
           {/* CTA */}
           <div className="ml-4">
             <Link
               href="/book"
-              className="bg-blue-900 text-white hover:bg-blue-800 px-4 py-2 rounded-md text-sm sm:text-base font-semibold transition duration-200"
+              className="bg-[#D4AF37] text-white hover:bg-[#C7A12F] px-6 py-3 rounded-md text-sm sm:text-base font-semibold transition duration-300 ease-in-out"
             >
               Book a Tasting
             </Link>

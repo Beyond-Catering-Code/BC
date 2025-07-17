@@ -15,6 +15,7 @@ const HotCanapesPage = () => {
           <li>Spicy Chicken Skewers</li>
           <li>Vegetarian Spring Rolls</li>
           <li>Mini Crab Cakes</li>
+          {/* Add more items here as needed */}
         </ul>
       </section>
     </>
