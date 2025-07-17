@@ -75,34 +75,72 @@ export default function Home() {
       `}</style>
 
       {/* Outstanding Catering Section */}
-      <section className="bg-white py-28 px-6 sm:px-10">
-        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-          <div className="text-left md:flex-1">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-snug tracking-tight">
-              Outstanding Catering
-            </h2>
-            <p className="text-lg text-gray-700 max-w-xl mb-8 leading-relaxed">
+      <section className="bg-white py-32 px-6 sm:px-10">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16">
+          <div className="text-left md:flex-1 space-y-8">
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight font-playfair">
+                Outstanding Catering
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] rounded-full"></div>
+            </div>
+
+            {/* Main Description */}
+            <p className="text-xl sm:text-2xl text-gray-700 max-w-2xl leading-relaxed font-light">
               From corporate galas to private soirées, our bespoke menus and white-glove service bring sophistication to every table.
             </p>
-            <a
-              href="/book"
-              className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-900 transition"
-            >
-              Book a Tasting
-            </a>
+
+            {/* Enhanced Content */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+                Every event tells a story, and we craft culinary narratives that leave lasting impressions. Our team of master chefs transforms the finest ingredients into artful experiences, while our dedicated service staff ensures flawless execution from first bite to final toast.
+              </p>
+
+              {/* Experience Description */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100">
+                <p className="text-lg text-blue-900 italic leading-relaxed">
+                  "We don't just cater events – we create memorable experiences that reflect your vision and exceed your guests' expectations."
+                </p>
+                <p className="text-sm text-blue-700 mt-3 font-medium">— Head Chef, Beyond Catering</p>
+              </div>
+            </div>
+
+            {/* Enhanced CTA */}
+            <div className="pt-4">
+              <a
+                href="/book"
+                className="inline-flex items-center bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Book a Tasting Experience
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <p className="text-sm text-gray-500 mt-3">
+                Experience our signature dishes in an intimate tasting session
+              </p>
+            </div>
           </div>
+
+          {/* Enhanced Image Section */}
           <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/blog3.jpg"
-                alt="Gourmet Plate"
-                width={800}
-                height={600}
-                layout="responsive"
-                objectFit="cover"
-                className="rounded-2xl"
-                priority
-              />
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/blog3.jpg"
+                  alt="Gourmet Plate"
+                  width={800}
+                  height={600}
+                  layout="responsive"
+                  objectFit="cover"
+                  className="rounded-2xl"
+                  priority
+                />
+              </div>
+              {/* Floating accent */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#C7A12F] rounded-full opacity-20"></div>
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-15"></div>
             </div>
           </div>
         </div>
