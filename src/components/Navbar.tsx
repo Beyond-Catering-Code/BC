@@ -127,12 +127,12 @@ const Navbar = () => {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none"
+                className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group"
                 aria-label="Toggle mobile menu"
               >
-                <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
               </button>
             </div>
           </div>
@@ -142,51 +142,98 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
-          <div className="fixed inset-0 bg-black bg-opacity-50" onClick={closeMobileMenu}></div>
+          {/* Backdrop with elegant gradient */}
+          <div 
+            className="fixed inset-0 bg-gradient-to-br from-black/60 via-blue-900/30 to-black/80 backdrop-blur-sm transition-opacity duration-300" 
+            onClick={closeMobileMenu}
+          ></div>
           
           {/* Menu Content */}
-          <div className="mobile-menu-container fixed top-16 left-0 right-0 bg-white shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="mobile-menu-container fixed top-16 left-0 right-0 bg-white shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto transform transition-all duration-300 ease-out">
+            {/* Elegant header */}
+            <div className="bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] px-6 py-6 text-center">
+              <h2 className="text-white text-xl font-playfair font-bold tracking-wide">Navigation</h2>
+              <div className="w-12 h-0.5 bg-white/60 mx-auto mt-2"></div>
+            </div>
+
             <div className="flex flex-col">
               {/* Main Navigation Links */}
-              <Link href="/about" onClick={closeMobileMenu} className="px-6 py-4 text-lg font-playfair border-b border-gray-100 hover:bg-blue-50 transition-colors">
-                About
+              <Link 
+                href="/about" 
+                onClick={closeMobileMenu} 
+                className="px-8 py-5 text-lg font-playfair text-gray-800 border-b border-gray-100 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
+              >
+                <span>About</span>
+                <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
               </Link>
 
               {/* Menus Section */}
-              <div className="border-b border-gray-100">
-                <Link href="/menus" onClick={closeMobileMenu} className="block px-6 py-4 text-lg font-playfair hover:bg-blue-50 transition-colors">
-                  Menus
+              <div className="border-b border-gray-200">
+                <Link 
+                  href="/menus" 
+                  onClick={closeMobileMenu} 
+                  className="block px-8 py-5 text-lg font-playfair text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
+                >
+                  <span>Menus</span>
+                  <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
                 </Link>
-                <div className="bg-gray-50">
-                  <Link href="/menus/salads" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Salads</Link>
-                  <Link href="/menus/cold-canapes" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Cold Canapés</Link>
-                  <Link href="/menus/hot-canapes" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Hot Canapés</Link>
-                  <Link href="/menus/sweet-canapes" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Sweet Canapés</Link>
-                  <Link href="/menus/main-course" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Main Course</Link>
-                  <Link href="/menus/platters" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Platters</Link>
-                  <Link href="/menus/bowl-fork" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Bowl & Fork</Link>
+                <div className="bg-gradient-to-r from-gray-50 to-blue-50/30 py-2">
+                  <Link href="/menus/salads" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Salads</Link>
+                  <Link href="/menus/cold-canapes" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Cold Canapés</Link>
+                  <Link href="/menus/hot-canapes" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Hot Canapés</Link>
+                  <Link href="/menus/sweet-canapes" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Sweet Canapés</Link>
+                  <Link href="/menus/main-course" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Main Course</Link>
+                  <Link href="/menus/platters" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Platters</Link>
+                  <Link href="/menus/bowl-fork" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Bowl & Fork</Link>
                 </div>
               </div>
 
               {/* Services Section */}
-              <div className="border-b border-gray-100">
-                <Link href="/services" onClick={closeMobileMenu} className="block px-6 py-4 text-lg font-playfair hover:bg-blue-50 transition-colors">
-                  Services
+              <div className="border-b border-gray-200">
+                <Link 
+                  href="/services" 
+                  onClick={closeMobileMenu} 
+                  className="block px-8 py-5 text-lg font-playfair text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
+                >
+                  <span>Services</span>
+                  <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
                 </Link>
-                <div className="bg-gray-50">
-                  <Link href="/services/corporate" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Corporate Catering</Link>
-                  <Link href="/services/private" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Private Events</Link>
-                  <Link href="/services/drop-off" onClick={closeMobileMenu} className="block px-8 py-3 text-sm hover:bg-blue-50 transition-colors">Drop-Off Catering</Link>
+                <div className="bg-gradient-to-r from-gray-50 to-blue-50/30 py-2">
+                  <Link href="/services/corporate" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Corporate Catering</Link>
+                  <Link href="/services/private" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Private Events</Link>
+                  <Link href="/services/drop-off" onClick={closeMobileMenu} className="block px-12 py-3 text-sm text-gray-700 hover:text-blue-900 hover:bg-white/60 transition-all duration-200 border-l-2 border-transparent hover:border-[#D4AF37] font-medium">Drop-Off Catering</Link>
                 </div>
               </div>
 
-              <Link href="/blog" onClick={closeMobileMenu} className="px-6 py-4 text-lg font-playfair border-b border-gray-100 hover:bg-blue-50 transition-colors">
-                Blog
+              <Link 
+                href="/blog" 
+                onClick={closeMobileMenu} 
+                className="px-8 py-5 text-lg font-playfair text-gray-800 border-b border-gray-100 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
+              >
+                <span>Blog</span>
+                <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
               </Link>
-              <Link href="/contact" onClick={closeMobileMenu} className="px-6 py-4 text-lg font-playfair hover:bg-blue-50 transition-colors">
-                Contact us
+              
+              <Link 
+                href="/contact" 
+                onClick={closeMobileMenu} 
+                className="px-8 py-5 text-lg font-playfair text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
+              >
+                <span>Contact us</span>
+                <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
               </Link>
+
+              {/* Elegant footer with additional CTA */}
+              <div className="bg-gradient-to-r from-gray-50 to-blue-50/30 px-8 py-6 text-center border-t border-gray-200">
+                <p className="text-sm text-gray-600 mb-4 font-medium">Ready to create something extraordinary?</p>
+                <Link
+                  href="/book"
+                  onClick={closeMobileMenu}
+                  className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 transform hover:scale-105"
+                >
+                  Book Your Tasting
+                </Link>
+              </div>
             </div>
           </div>
         </div>
