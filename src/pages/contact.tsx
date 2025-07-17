@@ -15,7 +15,7 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="relative h-60 md:h-150 w-full overflow-hidden">
         <img 
-          src="/images/contact1.JPG" 
+          src="/images/contact1.jpg" 
           alt="Contact Us background"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -28,7 +28,7 @@ export default function Home() {
           content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences."
         />
         <link rel="icon" type="image/png" href="/images/logo.png" />
-        <link rel="preload" as="image" href="/images/Hero.JPG" />
+        <link rel="preload" as="image" href="/images/Hero.jpg" />
       </Head>
 
       <Navbar />
@@ -36,7 +36,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen w-full font-serif">
         <Image
-          src="/images/Hero.JPG"
+          src="/images/Hero.jpg"
           alt="Beyond Catering Hero"
           fill
           priority
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/blog3.JPG"
+                src="/images/blog3.jpg"
                 alt="Gourmet Plate"
                 width={800}
                 height={600}

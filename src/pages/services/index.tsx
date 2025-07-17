@@ -17,7 +17,7 @@ const services = [
   {
     title: 'Corporate Catering',
     description: 'Impress your clients and colleagues with our professional corporate catering services.',
-    image: '/images/corporate.JPG',
+    image: '/images/corporate.jpg',
     href: '/services/corporate',
     icon: ChefHat,
   },
@@ -31,7 +31,7 @@ const services = [
   {
     title: 'Drop off Catering',
     description: 'Convenient and delicious catering solutions delivered right to your location.',
-    image: '/images/dropoff.JPG',
+    image: '/images/dropoff.jpg',
     href: '/services/drop-off',
     icon: Box,
   },

@@ -53,7 +53,7 @@ const DropOffCateringPage = () => {
                 </button>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-                <Image src="/images/dropoff2.JPG" alt="Drop Off Catering" fill className="object-cover" />
+                <Image src="/images/dropoff2.jpg" alt="Drop Off Catering" fill className="object-cover" />
               </div>
             </div>
           </div>
