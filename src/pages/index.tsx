@@ -9,15 +9,18 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-    }, 4000);
+    }, 3500);
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <>
       <Head>
-        <title>Beyond Catering | Dubai’s Top Catering Experience</title>
-        <meta name="description" content="Discover why Beyond Catering is trusted by Dubai’s top names." />
+        <title>Beyond Catering | Dubai’s Premier Culinary Experience</title>
+        <meta
+          name="description"
+          content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences."
+        />
         <link rel="icon" type="image/png" href="/images/logo.png" />
         <link rel="preload" as="image" href="/images/Hero.JPG" />
       </Head>
@@ -25,7 +28,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full">
+      <section className="relative h-screen w-full font-serif">
         <Image
           src="/images/Hero.JPG"
           alt="Beyond Catering Hero"
@@ -33,23 +36,22 @@ export default function Home() {
           priority
           className="absolute inset-0 object-cover w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/30 sm:bg-black/40" />
-
-        <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-6 z-10 pt-50">
-          <div className="opacity-0 translate-y-8 animate-[fadeUp_1.2s_ease-out_1s_forwards] max-w-2xl mx-auto">
-            <h1 className="text-white text-[1.75rem] sm:text-4xl md:text-5xl font-bold leading-snug">
-              Your Guests Deserve More<br />Than Just Food
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4 z-10">
+          <div className="opacity-0 translate-y-10 animate-[fadeUp_1.2s_ease-out_1s_forwards] max-w-3xl mx-auto">
+            <h1 className="text-white text-[2rem] sm:text-5xl md:text-6xl font-bold leading-tight">
+              Elevate Your Event<br />With Culinary Perfection
             </h1>
-            <p className="mt-4 text-white/90 text-base sm:text-lg font-medium leading-relaxed">
-              We turn meals into memories trusted by Dubai's most discerning hosts.
+            <p className="mt-5 text-white/90 text-base sm:text-xl font-medium leading-relaxed">
+              Gourmet experiences crafted for Dubai’s elite gatherings.
             </p>
+            <a
+              href="/book"
+              className="mt-6 inline-block bg-white text-black font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-200 transition"
+            >
+              Book a Tasting
+            </a>
           </div>
-        </div>
-
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white opacity-80">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
         </div>
       </section>
 
@@ -57,7 +59,7 @@ export default function Home() {
         @keyframes fadeUp {
           0% {
             opacity: 0;
-            transform: translateY(32px);
+            transform: translateY(40px);
           }
           100% {
             opacity: 1;
@@ -67,15 +69,15 @@ export default function Home() {
       `}</style>
 
       {/* Why Section */}
-      <section className="bg-white py-20 px-6">
+      <section className="bg-[#F0F6FB] py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 font-serif">
             Why Dubai Chooses Beyond Catering
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-12">
             It’s not just food. It’s the feeling your guests remember. At Beyond Catering, we craft unforgettable experiences with every plate.
           </p>
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-3 text-left">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 text-left">
             {[
               {
                 title: '5-Star Chefs, Curated Menus',
@@ -89,10 +91,10 @@ export default function Home() {
                 title: 'Trusted by the Best',
                 text: 'We’ve catered at Burj Khalifa, celebrity weddings, and corporate events at Emirates Towers. No matter the event, our quality never wavers.',
               },
-            ].map(({ title, text }) => (
-              <div key={title} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-700">{text}</p>
+            ].map(({ title, text }, i) => (
+              <div key={i} className="bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4 items-start">
+                <h3 className="text-lg font-semibold text-blue-900">{title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -100,13 +102,13 @@ export default function Home() {
       </section>
 
       {/* Clients Section */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-            Our Prestige Clients
+      <section className="bg-white py-16 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 font-serif">
+            Trusted By
           </h2>
-          <p className="text-gray-500 mb-10">Trusted by leading organizations</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+          <p className="text-gray-500 mb-10">Dubai’s top names in hospitality and enterprise</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
             {[
               'Dubai_municipality.jpg',
               'RTA_Dubai_logo.png',
@@ -119,13 +121,14 @@ export default function Home() {
             ].map((file, i) => (
               <div
                 key={i}
-                className="relative h-16 sm:h-20 w-full bg-white flex items-center justify-center p-4 rounded-lg shadow hover:scale-105 transition"
+                className="h-[110px] sm:h-[120px] bg-white rounded-xl shadow-sm flex items-center justify-center px-6 py-4 transition-transform transform hover:scale-[1.05]"
               >
                 <Image
                   src={`/clients/${file}`}
                   alt={file.split('.')[0]}
-                  fill
-                  className="object-contain"
+                  width={150}
+                  height={70}
+                  className="object-contain max-h-[60px] w-auto"
                 />
               </div>
             ))}
@@ -133,39 +136,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-white py-24 px-6 sm:px-10">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">What Our Clients Say</h2>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-            Hear from some of the brands and individuals who trust Beyond Catering with their events.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          {[
-            {
-              name: 'Alya from Emaar',
-              quote: 'Beyond Catering exceeded our expectations. The presentation, taste, and service were flawless.',
-            },
-            {
-              name: 'David, Private Client',
-              quote: 'The team delivered an unforgettable dining experience for our anniversary. Highly recommend!',
-            },
-            {
-              name: 'Fatima – Event Planner',
-              quote: 'Every dish was a masterpiece. Beyond Catering is now our go-to for all corporate functions.',
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-[#F9FBFF] p-8 rounded-2xl shadow-md border border-blue-100 text-left flex flex-col items-start"
-            >
-              <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
-              <p className="text-gray-800 italic mb-6">“{item.quote}”</p>
-              <span className="text-blue-900 font-semibold">{item.name}</span>
-            </div>
-          ))}
+      {/* Testimonials Section */}
+      <section className="bg-[#F0F6FB] py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-10 font-serif">
+            Client Impressions
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              {
+                name: 'Emaar Events',
+                quote: 'Professionalism and perfection in every bite.',
+              },
+              {
+                name: 'Luxury Private Client',
+                quote: 'The most elegant dining experience we’ve had in Dubai.',
+              },
+              {
+                name: 'Global Expo Team',
+                quote: 'Seamless service and unforgettable cuisine.',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow border border-blue-100 text-left flex flex-col items-start gap-4"
+              >
+                <div className="text-yellow-400 text-lg">★★★★★</div>
+                <p className="text-gray-700 italic">“{item.quote}”</p>
+                <span className="text-blue-900 font-semibold">{item.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
