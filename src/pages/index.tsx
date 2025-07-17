@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
- 
+
       {/* Hero Section */}
       <section className="relative h-screen w-full">
         <Image
@@ -130,6 +130,42 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-white py-24 px-6 sm:px-10">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">What Our Clients Say</h2>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            Hear from some of the brands and individuals who trust Beyond Catering with their events.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            {
+              name: 'Alya from Emaar',
+              quote: 'Beyond Catering exceeded our expectations. The presentation, taste, and service were flawless.',
+            },
+            {
+              name: 'David, Private Client',
+              quote: 'The team delivered an unforgettable dining experience for our anniversary. Highly recommend!',
+            },
+            {
+              name: 'Fatima – Event Planner',
+              quote: 'Every dish was a masterpiece. Beyond Catering is now our go-to for all corporate functions.',
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-[#F9FBFF] p-8 rounded-2xl shadow-md border border-blue-100 text-left flex flex-col items-start"
+            >
+              <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
+              <p className="text-gray-800 italic mb-6">“{item.quote}”</p>
+              <span className="text-blue-900 font-semibold">{item.name}</span>
+            </div>
+          ))}
         </div>
       </section>
     </>
