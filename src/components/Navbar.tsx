@@ -21,7 +21,10 @@ const Navbar = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuOpen && !(event.target as Element).closest('.mobile-menu-container')) {
+      const target = event.target as Element;
+      if (mobileMenuOpen && 
+          !target.closest('.mobile-menu-container') && 
+          !target.closest('.mobile-menu-button')) {
         setMobileMenuOpen(false);
       }
     };
@@ -54,7 +57,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-xl' : ''}`}>
+      <nav className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-xl' : ''}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -126,8 +129,16 @@ const Navbar = () => {
 
               {/* Mobile menu button */}
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setMobileMenuOpen(!mobileMenuOpen);
+                }}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+                className="mobile-menu-button md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group relative z-50 cursor-pointer touch-manipulation"
                 aria-label="Toggle mobile menu"
               >
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
@@ -141,15 +152,15 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop with elegant gradient */}
+        <>
+          {/* Backdrop with elegant gradient - positioned below navbar */}
           <div 
-            className="fixed inset-0 bg-gradient-to-br from-black/60 via-blue-900/30 to-black/80 backdrop-blur-sm transition-opacity duration-300" 
+            className="fixed top-16 left-0 right-0 bottom-0 bg-gradient-to-br from-black/60 via-blue-900/30 to-black/80 backdrop-blur-sm transition-opacity duration-300 z-40 md:hidden" 
             onClick={closeMobileMenu}
           ></div>
           
           {/* Menu Content */}
-          <div className="mobile-menu-container fixed top-16 left-0 right-0 bg-white shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto transform transition-all duration-300 ease-out">
+          <div className="mobile-menu-container fixed top-16 left-0 right-0 bg-white shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto transform transition-all duration-300 ease-out z-40 md:hidden">
             {/* Elegant header */}
             <div className="bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] px-6 py-6 text-center">
               <h2 className="text-white text-xl font-playfair font-bold tracking-wide">Navigation</h2>
@@ -233,12 +244,12 @@ const Navbar = () => {
                 >
                   Book Your Tasting
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+                             </div>
+             </div>
+           </div>
+         </>
+       )}
+     </>
   );
 };
 
