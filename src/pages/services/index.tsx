@@ -38,12 +38,12 @@ const services = [
 ];
 
 const otherServices = [
-  { name: 'Canapés', description: 'Elegant bite-sized delicacies perfect for sophisticated events.', href: '/services/canapes', icon: ChefHat },
-  { name: 'Bowl & Fork', description: 'Casual dining options ideal for social gatherings.', href: '/services/bowl-fork', icon: UtensilsCrossed },
-  { name: 'Fine Dining', description: 'Premium dining experience with exceptional service.', href: '/services/fine-dining', icon: Wine },
-  { name: 'Live Station', description: 'Interactive cooking stations for an engaging dining experience.', href: '/services/live-station', icon: CookingPot },
-  { name: 'Barbecue', description: 'Grilled specialties for outdoor events and celebrations.', href: '/services/barbecue', icon: Flame },
-  { name: 'High Tea', description: 'Traditional afternoon tea service with delicate pastries.', href: '/services/high-tea', icon: Coffee },
+  { name: 'Canapés', description: 'Elegant bite-sized delicacies perfect for sophisticated events.', icon: ChefHat },
+  { name: 'Bowl & Fork', description: 'Casual dining options ideal for social gatherings.', icon: UtensilsCrossed },
+  { name: 'Fine Dining', description: 'Premium dining experience with exceptional service.', icon: Wine },
+  { name: 'Live Station', description: 'Interactive cooking stations for an engaging dining experience.', icon: CookingPot },
+  { name: 'Barbecue', description: 'Grilled specialties for outdoor events and celebrations.', icon: Flame },
+  { name: 'High Tea', description: 'Traditional afternoon tea service with delicate pastries.', icon: Coffee },
 ];
 
 const ServicesPage = () => {
@@ -96,11 +96,11 @@ const ServicesPage = () => {
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
                 {otherServices.map((service) => (
-                  <Link href={service.href} key={service.name} className="group flex flex-col items-center">
-                      <service.icon className="w-10 h-10 text-gray-600 group-hover:text-blue-800 transition-colors" />
+                  <div key={service.name} className="flex flex-col items-center">
+                      <service.icon className="w-10 h-10 text-gray-600" />
                       <h4 className="mt-4 font-semibold text-gray-800">{service.name}</h4>
                       <p className="mt-1 text-sm text-gray-500">{service.description}</p>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
