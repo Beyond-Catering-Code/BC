@@ -133,7 +133,6 @@ export default function Home() {
               </div>
               {/* Floating accent */}
               <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#C7A12F] rounded-full opacity-20"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-15"></div>
             </div>
           </div>
         </div>
