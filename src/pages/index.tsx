@@ -97,13 +97,6 @@ export default function Home() {
                 Every event tells a story, and we craft culinary narratives that leave lasting impressions. Our team of master chefs transforms the finest ingredients into artful experiences, while our dedicated service staff ensures flawless execution from first bite to final toast.
               </p>
 
-              {/* Experience Description */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100">
-                <p className="text-lg text-blue-900 italic leading-relaxed">
-                  "We don't just cater events – we create memorable experiences that reflect your vision and exceed your guests' expectations."
-                </p>
-                <p className="text-sm text-blue-700 mt-3 font-medium">— Head Chef, Beyond Catering</p>
-              </div>
             </div>
 
             {/* Enhanced CTA */}
