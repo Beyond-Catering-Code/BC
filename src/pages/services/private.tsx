@@ -94,7 +94,7 @@ const PrivateEventsPage = () => {
                 </button>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-                <Image src="/clients/private.jpg" alt="Private Event Setup" layout="fill" className="object-cover" />
+                <Image src="/images/private2.jpg" alt="Private Event Setup" layout="fill" className="object-cover" />
               </div>
             </div>
           </div>
