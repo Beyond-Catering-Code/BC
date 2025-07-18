@@ -29,6 +29,9 @@ export default function Home() {
         />
         <link rel="icon" type="image/png" href="/images/logo.png" />
         <link rel="preload" as="image" href="/images/Hero.jpg" />
+        <link rel="preload" as="image" href="/images/blog3.jpg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
       <Navbar />
@@ -40,6 +43,10 @@ export default function Home() {
           alt="Beyond Catering Hero"
           fill
           priority
+          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           className="absolute inset-0 object-cover w-full h-full"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -119,15 +126,17 @@ export default function Home() {
           {/* Enhanced Image Section */}
           <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-102 transition-transform duration-300">
                 <Image
                   src="/images/blog3.jpg"
                   alt="Gourmet Plate"
                   width={800}
                   height={600}
-                  layout="responsive"
-                  objectFit="cover"
-                  className="rounded-2xl"
+                  className="rounded-2xl object-cover"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   priority
                 />
               </div>
@@ -225,6 +234,8 @@ export default function Home() {
                   width={150}
                   height={70}
                   className="object-contain max-h-[60px] w-auto"
+                  quality={85}
+                  sizes="150px"
                 />
               </div>
             ))}

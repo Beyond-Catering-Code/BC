@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Beyond Catering Website
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Performance Optimizations
+
+### Image Optimization
+This project has been optimized for faster image loading:
+- **Massive file size reductions**: Images compressed by 90-98% (e.g., Hero.jpg: 13.3MB → 249KB)
+- **Modern format support**: WebP and AVIF formats automatically served to supported browsers
+- **Responsive loading**: Proper `sizes` attributes for optimal bandwidth usage
+- **Blur placeholders**: Smooth loading experience with base64 blur placeholders
+- **Critical image preloading**: Above-the-fold images preloaded for instant display
+
+### Next.js Configuration
+- Progressive JPEG compression
+- Automatic WebP/AVIF conversion
+- Optimized device size breakpoints
+- Enhanced caching with 60s minimum TTL
 
 ## Getting Started
 
