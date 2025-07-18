@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -62,42 +63,26 @@ const MenusPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Menus - Beyond Catering</title>
+        <meta name="description" content="Explore our curated menus designed for premium catering experiences in Dubai — from elegant canapés to full-course meals." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://beyondcatering.ae/menus" />
+      </Head>
+
       <Navbar />
 
-      {/* HERO SPLIT SECTION */}
-      <section className="h-screen flex flex-col md:flex-row">
-        {/* Left Side - Image */}
-        <div
-          className="w-full md:w-1/2 h-80 md:h-auto bg-cover bg-left bg-no-repeat"
-          style={{ backgroundImage: "url('/images/backgroundimage1.jpg')" }}
-        />
-
-        {/* Right Side - Text */}
-        <div className="w-full md:w-1/2 bg-black text-white flex flex-col justify-center px-6 py-16">
-          <div className="max-w-xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl font-bold font-[Playfair Display] mb-6">Our Menus</h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed">
-              Our Menus are totally customized and flexible to your needs. Our cold canapés are a great option for the beginning of your event.
-            </p>
-            <div className="space-y-6 text-white/90 text-base sm:text-lg">
-              <div>
-                <p className="uppercase tracking-wide font-semibold text-base sm:text-lg">Packages · The Beginner</p>
-                <p>4 selections per guest (min. 20 guests)</p>
-                <p>Recommended for 1 hour events</p>
-              </div>
-              <div>
-                <p className="uppercase tracking-wide font-semibold text-base sm:text-lg">The Standard</p>
-                <p>6 selections per guest (min. 20 guests)</p>
-                <p>Recommended for a 2 hour event</p>
-              </div>
-              <div>
-                <p className="uppercase tracking-wide font-semibold text-base sm:text-lg">The Premium</p>
-                <p>8 selections per guest (min. 20 guests)</p>
-                <p>Recommended for a 3 hour event</p>
-              </div>
-              <hr className="border-white/20 my-4" />
-            </div>
-          </div>
+      {/* HERO SECTION */}
+      <section className="w-full bg-[#0B1120] text-white px-6 py-24">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl font-semibold font-[Playfair Display] mb-6">
+            Our Menus
+          </h1>
+          <div className="h-1 w-16 bg-[#D4AF37] mx-auto mb-6 rounded-full" />
+          <p className="text-2xl sm:text-3xl max-w-4xl mx-auto leading-relaxed mb-4">
+            Crafted to impress, designed to delight, our menus are fully customized and built around your event vision,
+            delivering a seamless culinary experience from refined canapés to full-course presentations.
+          </p>
         </div>
       </section>
 
@@ -136,8 +121,6 @@ const MenusPage = () => {
                     quality={85}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={index === 0}
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                 </div>
               </div>
