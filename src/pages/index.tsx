@@ -126,7 +126,7 @@ export default function Home() {
           {/* Enhanced Image Section */}
           <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-102 transition-transform duration-300">
+              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-101 transition-transform duration-300">
                 <Image
                   src="/images/blog3.jpg"
                   alt="Gourmet Plate"
@@ -191,7 +191,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#FAFAF9] border border-gray-200 rounded-2xl px-8 py-10 text-center shadow-[0_8px_24px_-6px_rgba(0,0,0,0.06)] hover:shadow-xl hover:scale-[1.015] transition duration-300 ease-in-out"
+                className="bg-[#FAFAF9] border border-gray-200 rounded-2xl px-8 py-10 text-center shadow-[0_8px_24px_-6px_rgba(0,0,0,0.06)] hover:shadow-xl transition duration-300 ease-in-out"
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight">
@@ -226,7 +226,7 @@ export default function Home() {
             ].map((file, i) => (
               <div
                 key={i}
-                className="h-[110px] sm:h-[120px] bg-white rounded-xl shadow-sm flex items-center justify-center px-6 py-4 transition-transform transform hover:scale-[1.05]"
+                className="h-[110px] sm:h-[120px] bg-white rounded-xl shadow-sm flex items-center justify-center px-6 py-4 transition-transform transform hover:shadow-lg"
               >
                 <Image
                   src={`/clients/${file}`}
@@ -266,7 +266,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-xl shadow border border-blue-100 text-left flex flex-col items-start gap-4"
+                className="bg-white p-6 rounded-xl shadow border border-blue-100 text-left flex flex-col items-start gap-4 hover:shadow-lg"
               >
                 <div className="text-yellow-400 text-lg">★★★★★</div>
                 <p className="text-gray-700 italic">“{item.quote}”</p>
