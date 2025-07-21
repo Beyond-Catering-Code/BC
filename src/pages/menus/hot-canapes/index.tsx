@@ -51,7 +51,7 @@ const HotCanapesPage = () => {
           <div className="w-1/2">
             <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-[#D4AF37] shadow-lg">
               <Image
-                src="/menus/hotcanapes.jpg"
+                src="/images/hotcanapes.jpg"
                 alt="Hot Canapés"
                 layout="intrinsic"
                 objectFit="cover"

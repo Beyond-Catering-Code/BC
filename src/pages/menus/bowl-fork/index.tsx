@@ -54,7 +54,7 @@ const BowlAndForkPage = () => {
           <div className="w-1/2">
             <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-[#D4AF37] shadow-lg">
               <Image
-                src="/menus/bowlandfork.jpg"
+                src="/images/bowlFork.jpg"
                 alt="Bowl & Fork Dish"
                 layout="intrinsic"
                 objectFit="cover"

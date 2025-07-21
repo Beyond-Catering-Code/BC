@@ -33,7 +33,7 @@ const menuSections = [
     description:
       'End your event on a sweet note. These handcrafted bites are the perfect finale to your celebration. Indulgent, elegant, unforgettable.',
     link: '/menus/sweet-canapes',
-    image: 'sweet-canapes.jpg',
+    image: 'sweetCanapes.jpg',
   },
   {
     title: 'Main Course',
@@ -54,7 +54,7 @@ const menuSections = [
     description:
       'A great way to receive your guests after the canapé service. Nice portions inside our delight bowls, from truffle pasta to miso black cod.',
     link: '/menus/bowl-fork',
-    image: 'bowl-fork.jpg',
+    image: 'bowl.jpg',
   },
 ];
 
