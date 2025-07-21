@@ -1,26 +1,112 @@
 'use client';
 
-import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 const ColdCanapesPage = () => {
   return (
-    <section className="px-6 py-20 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Cold Canapés</h1>
+    <>
+      <Head>
+        <title>Cold Canapés - Beyond Catering</title>
+        <meta name="description" content="Elegant cold canapés crafted with premium ingredients." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://beyondcatering.ae/menus/cold-canapes" />
+      </Head>
 
-      <p className="text-lg text-gray-700 mb-10">
-        Our cold canapés are a great option for the beginning of your event. Each bite is crafted with care using premium ingredients.
-      </p>
+      <Navbar />
 
-      {/* List of Cold Canapés */}
-      <ul className="space-y-4 text-gray-800 list-disc list-inside">
-        <li>Goat cheesecake, red onion jam, rosemary shortbread (v)</li>
-        <li>Balsamic tomato, cashew pesto tartlet (v)</li>
-        <li>Heirloom tomato, burrata, basil tartine (v)</li>
-        <li>Smoked salmon, cucumber, dill cream cheese on rye</li>
-        <li>Mini caprese skewers with balsamic reduction (v)</li>
-        {/* Add more items here as needed */}
-      </ul>
-    </section>
+      {/* HERO */}
+      <section className="w-full bg-[#0B1120] text-white px-6 py-24">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h1 className="text-5xl sm:text-6xl font-[Playfair Display] font-bold text-gold mb-6">
+            Cold Canapés
+          </h1>
+          <p className="text-2xl sm:text-3xl max-w-4xl mx-auto leading-relaxed mb-4">
+            Elegant, refreshing bites that set the tone. Crafted to impress, perfect for any event.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE COLD CANAPÉS */}
+      <section className="w-full bg-white px-6 py-16">
+        <div className="max-w-7xl mx-auto flex justify-between items-center space-x-12">
+          <div className="w-1/2">
+            <h2 className="text-4xl font-bold text-[#D4AF37] mb-4">Why Choose Our Cold Canapés?</h2>
+            <p className="text-xl text-gray-700 mb-6">
+              Our cold canapés are thoughtfully designed to provide a sophisticated start to your event. Each bite combines premium ingredients with artistic presentation to ensure your guests are delighted from the first taste.
+            </p>
+            <p className="text-xl text-gray-700 mb-6">
+              From classic combinations to creative new pairings, our menu offers a refreshing and elegant introduction to your dining experience.
+            </p>
+            <Link
+              href="/book-tasting"
+              className="inline-block bg-[#D4AF37] text-white text-lg px-7 py-3 rounded-full transition-all hover:bg-[#b68c1f]"
+            >
+              Book a Tasting Experience
+            </Link>
+          </div>
+
+          <div className="w-1/2">
+            <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-[#D4AF37] shadow-lg">
+              <Image
+                src="/menus/coldcanapes.jpg"
+                alt="Cold Canapés"
+                layout="intrinsic"
+                objectFit="cover"
+                objectPosition="center"
+                width={500}
+                height={400}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MENU GRID */}
+      <main className="bg-white pt-24 pb-24 px-6 sm:px-10 font-sans">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Goat Cheesecake</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              With red onion jam on rosemary shortbread (v).
+            </p>
+          </div>
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Tomato Pesto Tartlet</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              Balsamic tomato and cashew pesto (v).
+            </p>
+          </div>
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Burrata Tartine</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              Heirloom tomato, burrata, basil (v).
+            </p>
+          </div>
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Smoked Salmon Rye</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              Cucumber, dill cream cheese on rye.
+            </p>
+          </div>
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Mini Caprese Skewers</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              With balsamic reduction (v).
+            </p>
+          </div>
+          <div className="bg-[#F4F4F4] hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-[#0B1120] mb-4">Beetroot Cured Salmon</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              With horseradish crème fraîche on blini.
+            </p>
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 
