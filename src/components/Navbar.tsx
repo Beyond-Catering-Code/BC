@@ -129,17 +129,10 @@ const Navbar = () => {
 
               {/* Mobile menu button */}
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setMobileMenuOpen(!mobileMenuOpen);
-                }}
-                onTouchEnd={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="mobile-menu-button md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group relative z-50 cursor-pointer touch-manipulation"
                 aria-label="Toggle mobile menu"
+                type="button"
               >
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>

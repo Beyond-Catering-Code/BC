@@ -40,6 +40,7 @@ const SweetCanapesPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/menus/sweet-canapes" />
+        <link rel="preload" as="image" href="/images/sweet.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -47,13 +48,13 @@ const SweetCanapesPage = () => {
         <meta property="og:description" content="Handcrafted sweet canapés for Dubai events. Elegant, indulgent, and unforgettable." />
         <meta property="og:url" content="https://beyondcatering.ae/menus/sweet-canapes" />
         <meta property="og:site_name" content="Beyond Catering" />
-        <meta property="og:image" content="https://beyondcatering.ae/images/sweetcanapes.jpg" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/sweet.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sweet Canapés - Beyond Catering | Luxury Dessert Canapés Dubai" />
         <meta name="twitter:description" content="Signature sweet canapés for Dubai events. Mini cheesecakes, mousse, pavlova, profiteroles, and more." />
-        <meta name="twitter:image" content="https://beyondcatering.ae/images/sweetcanapes.jpg" />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/sweet.jpg" />
 
         {/* Structured Data */}
         <script
@@ -112,13 +113,16 @@ const SweetCanapesPage = () => {
           <div className="lg:w-1/2">
             <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden border-4 border-[#D4AF37] shadow-2xl">
               <Image
-                src="/images/sweetcanapes.jpg"
+                src="/images/sweet.jpg"
                 alt="Sweet canapés beautifully plated for Dubai dessert catering"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
                 className="rounded-xl"
                 priority
+                quality={85}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </div>

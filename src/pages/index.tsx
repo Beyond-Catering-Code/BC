@@ -154,7 +154,6 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#C7A12F] rounded-full opacity-20"></div>
             </div>
           </div>
         </div>
