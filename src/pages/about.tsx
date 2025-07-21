@@ -4,20 +4,65 @@ import Navbar from '@/components/Navbar';
 import { BadgeCheck, Users, ChefHat, Star, Trophy, Target } from 'lucide-react';
 import Footer from '@/components/Footer';
 
+// Structured Data for SEO (JSON-LD)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About Us - Beyond Catering",
+  "description": "Learn about Beyond Catering, Dubai’s premier catering service dedicated to creating unforgettable culinary experiences.",
+  "url": "https://beyondcatering.ae/about",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Beyond Catering",
+    "url": "https://beyondcatering.ae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://beyondcatering.ae/images/logo.png"
+    }
+  }
+};
+
 const AboutPage = () => {
   return (
     <>
       <Head>
         <title>About Us - Beyond Catering</title>
         <meta name="description" content="Learn about Beyond Catering, Dubai’s premier catering service dedicated to creating unforgettable culinary experiences." />
+        <meta name="keywords" content="About Beyond Catering, Dubai catering, catering company Dubai, event catering, luxury catering, chef team Dubai" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://beyondcatering.ae/about" />
         <link rel="icon" type="image/png" href="/images/logo.png" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Us - Beyond Catering" />
+        <meta property="og:description" content="Dubai’s premier catering service dedicated to creating unforgettable culinary experiences." />
+        <meta property="og:url" content="https://beyondcatering.ae/about" />
+        <meta property="og:site_name" content="Beyond Catering" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/private.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - Beyond Catering" />
+        <meta name="twitter:description" content="Dubai’s top catering team — discover our story, vision, and values." />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/private.jpg" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
 
       <Navbar />
 
-      <main className="bg-white text-gray-800">
+      <main className="bg-white text-gray-800" id="main-content" role="main">
         {/* Hero Section */}
-        <section className="relative h-[40vh] min-h-[300px] w-full flex items-center justify-center text-center text-white overflow-hidden">
+        <section
+          className="relative h-[40vh] min-h-[300px] w-full flex items-center justify-center text-center text-white overflow-hidden"
+          aria-label="About Beyond Catering Hero"
+        >
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/private.jpg"
@@ -30,7 +75,7 @@ const AboutPage = () => {
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               priority
             />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
           </div>
           <div className="relative z-10 p-4">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">About Beyond Catering</h1>
@@ -39,7 +84,7 @@ const AboutPage = () => {
         </section>
 
         {/* Our Story Section */}
-        <section className="py-20 px-6">
+        <section className="py-20 px-6" aria-label="Our Story">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story: A Passion for Perfection</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
@@ -52,12 +97,12 @@ const AboutPage = () => {
         </section>
 
         {/* Mission and Vision Section */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6" aria-label="Mission and Vision">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
                 <div className="flex items-center gap-4 mb-3">
-                  <Target size={32} className="text-blue-900" />
+                  <Target size={32} className="text-blue-900" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
                 </div>
                 <p className="text-gray-700 leading-loose">
@@ -66,7 +111,7 @@ const AboutPage = () => {
               </div>
               <div>
                 <div className="flex items-center gap-4 mb-3">
-                  <Trophy size={32} className="text-blue-900" />
+                  <Trophy size={32} className="text-blue-900" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
                 </div>
                 <p className="text-gray-700 leading-loose">
@@ -84,13 +129,14 @@ const AboutPage = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                priority={false}
               />
             </div>
           </div>
         </section>
 
         {/* Our Values Section */}
-        <section className="py-20 px-6">
+        <section className="py-20 px-6" aria-label="Our Values">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">The Pillars of Our Promise</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -103,7 +149,7 @@ const AboutPage = () => {
                 { icon: 'Integrity', title: 'Trust & Transparency', description: 'We operate with honesty and clear communication from the first call to the final invoice.' },
               ].map((value, index) => (
                 <div key={index} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                  <div className="bg-blue-100 p-4 rounded-full mb-4">
+                  <div className="bg-blue-100 p-4 rounded-full mb-4" aria-hidden="true">
                     {typeof value.icon === 'string' ? (
                       <span className="font-bold text-blue-900">{value.icon.slice(0, 1)}</span>
                     ) : (
@@ -119,7 +165,7 @@ const AboutPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-blue-900 text-white">
+        <section className="bg-blue-900 text-white" aria-label="Contact Beyond Catering">
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Create an Unforgettable Event?</h2>
             <p className="text-blue-100 max-w-2xl mx-auto mb-8">
@@ -128,15 +174,17 @@ const AboutPage = () => {
             <a
               href="/contact"
               className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-md font-semibold text-lg transition-colors"
+              aria-label="Contact Us Today"
             >
               Contact Us Today
             </a>
           </div>
         </section>
       </main>
-
+      {/* Footer can be uncommented if needed */}
+      {/* <Footer /> */}
     </>
   );
 };
 
-export default AboutPage; 
+export default AboutPage;

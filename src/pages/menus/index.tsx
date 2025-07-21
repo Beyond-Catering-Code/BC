@@ -6,6 +6,25 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
+// Structured Data for SEO (JSON-LD)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Menus - Beyond Catering",
+  "description": "Explore curated menus for premium catering experiences in Dubai, including canapés, salads, mains, platters, and more.",
+  "url": "https://beyondcatering.ae/menus",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Beyond Catering",
+    "url": "https://beyondcatering.ae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://beyondcatering.ae/favicon.ico"
+    }
+  }
+};
+
 const menuSections = [
   {
     title: 'Salads',
@@ -64,22 +83,54 @@ const MenusPage = () => {
   return (
     <>
       <Head>
-        <title>Menus - Beyond Catering</title>
-        <meta name="description" content="Explore our curated menus designed for premium catering experiences in Dubai — from elegant canapés to full-course meals." />
+        <title>Menus - Beyond Catering | Curated Event Menus Dubai</title>
+        <meta
+          name="description"
+          content="Explore curated menus designed for premium catering experiences in Dubai. From elegant canapés to full-course meals, every menu is crafted to impress."
+        />
+        <meta
+          name="keywords"
+          content="Menus, Beyond Catering, Dubai catering, event menus, canapés, main course, salads, platters, luxury catering Dubai, menu selection"
+        />
         <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/menus" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Menus - Beyond Catering | Curated Event Menus Dubai" />
+        <meta property="og:description" content="Explore curated event menus for Dubai. Elegant canapés, salads, mains, platters, and more." />
+        <meta property="og:url" content="https://beyondcatering.ae/menus" />
+        <meta property="og:site_name" content="Beyond Catering" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/menus-hero.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Menus - Beyond Catering | Curated Event Menus Dubai" />
+        <meta name="twitter:description" content="Signature event menus for Dubai. Salads, canapés, mains, and more." />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/menus-hero.jpg" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
 
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="w-full bg-[#0B1120] text-white px-6 py-24">
+      <section
+        className="w-full bg-[#0B1120] text-white px-4 sm:px-6 py-16 sm:py-24"
+        aria-label="Menus Overview"
+        role="region"
+      >
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl font-semibold font-[Playfair Display] mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold font-[Playfair Display] mb-6">
             Our Menus
           </h1>
           <div className="h-1 w-16 bg-[#D4AF37] mx-auto mb-6 rounded-full" />
-          <p className="text-2xl sm:text-3xl max-w-4xl mx-auto leading-relaxed mb-4">
+          <p className="text-xl sm:text-2xl md:text-3xl max-w-4xl mx-auto leading-relaxed mb-4">
             Crafted to impress, designed to delight, our menus are fully customized and built around your event vision,
             delivering a seamless culinary experience from refined canapés to full-course presentations.
           </p>
@@ -87,35 +138,43 @@ const MenusPage = () => {
       </section>
 
       {/* MENU GRID */}
-      <main ref={scrollRef} className="bg-white pt-24 pb-24 px-6 sm:px-10 font-sans">
+      <main
+        ref={scrollRef}
+        className="bg-white pt-16 sm:pt-24 pb-16 sm:pb-24 px-4 sm:px-10 font-sans"
+        aria-label="Menu Categories"
+        role="main"
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="space-y-24">
+          <div className="space-y-16 sm:space-y-24">
             {menuSections.map((section, index) => (
               <div
                 key={section.title}
-                className={`flex flex-col-reverse items-center gap-12 md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                className={`flex flex-col-reverse items-center gap-10 sm:gap-12 md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                role="region"
+                aria-label={section.title}
               >
                 <div className="md:w-1/2 text-center">
-                  <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4 font-[Playfair Display]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4 font-[Playfair Display]">
                     {section.title}
                   </h2>
-                  <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto">
+                  <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-xl mx-auto">
                     {section.description}
                   </p>
                   <div className="flex justify-center">
                     <Link
                       href={section.link}
-                      className="inline-block bg-[#0d1528] text-white hover:bg-blue-900 text-lg px-7 py-3 rounded-full transition font-[Playfair Display]"
+                      className="inline-block bg-[#0d1528] text-white hover:bg-blue-900 text-base sm:text-lg px-6 sm:px-7 py-2.5 sm:py-3 rounded-full transition font-[Playfair Display]"
+                      aria-label={`View ${section.title} Menu`}
                     >
                       View {section.title}
                     </Link>
                   </div>
                 </div>
 
-                <div className="md:w-1/2 h-80 w-full rounded-xl overflow-hidden bg-gray-200 relative">
+                <div className="md:w-1/2 h-64 sm:h-80 w-full rounded-xl overflow-hidden bg-gray-200 relative">
                   <Image
                     src={`/menus/${section.image}`}
-                    alt={section.title}
+                    alt={`${section.title} - menu preview`}
                     fill
                     className="object-cover"
                     quality={85}
