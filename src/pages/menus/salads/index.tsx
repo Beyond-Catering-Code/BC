@@ -65,15 +65,8 @@ const MenusPage = () => {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section
-        className="w-full bg-[#0B1120] text-white px-4 sm:px-6 py-20 sm:py-28 relative overflow-hidden"
-        aria-label="Salads Event Catering Hero"
-        role="region"
-      >
-        <div
-          className="absolute inset-0 opacity-10 bg-[url('/images/saladbackground.jpg')] bg-cover bg-center"
-          aria-hidden="true"
-        />
+      <section className="w-full bg-[#0B1120] text-white px-6 py-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('/images/saladbackground.jpg')] bg-cover bg-center" />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-[Playfair Display] tracking-wide font-semibold text-gold mb-6 leading-tight">
             Fresh & Premium Salads
