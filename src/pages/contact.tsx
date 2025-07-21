@@ -48,16 +48,20 @@ const ContactPage = () => {
       
       {/* Hero Section */}
       <section
-        className="relative h-60 md:h-150 w-full overflow-hidden"
+        className="relative h-60 md:h-[400px] w-full overflow-hidden"
         aria-label="Contact Us Hero"
         role="region"
       >
-        <img 
-          src="/images/contact1.jpg" 
-          alt="Contact Us background"
-          className="absolute inset-0 w-full h-full object-cover"
-          fetchpriority="high"
-        />
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/contact1.jpg"
+            alt="Contact Us background"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl font-bold">Contact Us</h1>
           <p className="mt-2 text-lg md:text-xl">Home • Contact Us</p>
@@ -146,11 +150,16 @@ const ContactPage = () => {
 
       {/* Online Form Section */}
       <section className="relative overflow-hidden" aria-label="Online Contact Form" role="region">
-        <img 
-          src="/images/contact2.jpg" 
-          alt="Online form background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/contact2.jpg"
+            alt="Online form background"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority={false}
+          />
+        </div>
         <div className="relative z-10 py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <form className="bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-lg space-y-6" aria-label="Contact Form">
