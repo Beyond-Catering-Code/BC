@@ -97,7 +97,6 @@ const PrivateEventsPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/services/private" />
-        <link rel="preload" as="image" href="/images/private2.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -110,7 +109,7 @@ const PrivateEventsPage = () => {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Private Events Catering Dubai | Beyond Catering" />
-        <meta name="twitter:description" content="Dubai's leading private event catering — curated menus, expert chefs, seamless execution." />
+        <meta name="twitter:description" content="Dubai’s leading private event catering — curated menus, expert chefs, seamless execution." />
         <meta name="twitter:image" content="https://beyondcatering.ae/images/private2.jpg" />
 
         {/* Structured Data */}
@@ -136,7 +135,7 @@ const PrivateEventsPage = () => {
                   Private Events Catering
                 </h1>
                 <p className="text-lg text-gray-600">
-                  Whether it's an intimate dinner, a milestone birthday, or a stylish garden gathering, we bring refined hospitality to your most special moments. Beyond Catering designs every private event with care — from elegant canapés and live stations to beautifully curated buffets. Our team works closely with you to craft a menu and setting that reflect your vision, so you can focus on hosting while we take care of every detail. Because your celebrations deserve to be effortless, memorable, and undeniably delicious.
+                  Whether it’s an intimate dinner, a milestone birthday, or a stylish garden gathering, we bring refined hospitality to your most special moments. Beyond Catering designs every private event with care — from elegant canapés and live stations to beautifully curated buffets. Our team works closely with you to craft a menu and setting that reflect your vision, so you can focus on hosting while we take care of every detail. Because your celebrations deserve to be effortless, memorable, and undeniably delicious.
                 </p>
                 <button className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-md font-semibold transition duration-200" aria-label="Plan Your Event">
                   Plan Your Event
@@ -149,11 +148,10 @@ const PrivateEventsPage = () => {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={90}
-                  priority
+                  quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  loading="eager"
+                  blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
+                  priority
                 />
               </div>
             </div>

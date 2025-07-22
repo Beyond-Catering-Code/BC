@@ -33,8 +33,6 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/about" />
         <link rel="icon" type="image/png" href="/images/logo.png" />
-        <link rel="preload" as="image" href="/images/private.webp" fetchPriority="high" />
-        <link rel="preload" as="image" href="/images/blog.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -42,13 +40,13 @@ const AboutPage = () => {
         <meta property="og:description" content="Dubai’s premier catering service dedicated to creating unforgettable culinary experiences." />
         <meta property="og:url" content="https://beyondcatering.ae/about" />
         <meta property="og:site_name" content="Beyond Catering" />
-        <meta property="og:image" content="https://beyondcatering.ae/images/private.jpg" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/private.webp" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us - Beyond Catering" />
         <meta name="twitter:description" content="Dubai’s top catering team — discover our story, vision, and values." />
-        <meta name="twitter:image" content="https://beyondcatering.ae/images/private.jpg" />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/private.webp" />
 
         {/* Structured Data */}
         <script
@@ -71,12 +69,11 @@ const AboutPage = () => {
               alt="Our team at a catering event"
               fill
               className="object-cover"
-              quality={90}
+              quality={85}
               sizes="100vw"
               placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
               priority
-              loading="eager"
             />
             <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
           </div>
@@ -128,12 +125,11 @@ const AboutPage = () => {
                 alt="Elaborate food platter"
                 fill
                 className="object-cover"
-                quality={90}
+                quality={85}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
                 priority={false}
-                loading="lazy"
               />
             </div>
           </div>

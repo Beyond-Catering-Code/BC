@@ -105,13 +105,11 @@ const CorporateCateringPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/corporate-catering" />
-        <link rel="preload" as="image" href="/images/corp1.webp" />
-        <link rel="preload" as="image" href="/images/corp2.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Corporate Catering Solutions - Beyond Catering | Dubai Office Catering" />
-        <meta property="og:description" content="Dubai's leading corporate catering. Custom food programs, buffet setups, and canteen management for companies of all sizes." />
+        <meta property="og:description" content="Dubai’s leading corporate catering. Custom food programs, buffet setups, and canteen management for companies of all sizes." />
         <meta property="og:url" content="https://beyondcatering.ae/corporate-catering" />
         <meta property="og:site_name" content="Beyond Catering" />
         <meta property="og:image" content="https://beyondcatering.ae/images/corp1.jpg" />
@@ -156,17 +154,16 @@ const CorporateCateringPage = () => {
                 </button>
               </div>
               <div className="relative h-64 sm:h-96 rounded-lg overflow-hidden shadow-lg">
-                <Image
+                                  <Image
                   src="/images/corp1.webp"
                   alt="Corporate catering setup with food displays"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={90}
-                  priority
+                  quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  loading="eager"
+                  blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
+                  priority
                 />
               </div>
             </div>
@@ -280,11 +277,10 @@ const CorporateCateringPage = () => {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
-                quality={90}
-                priority={false}
+                quality={85}
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                loading="lazy"
+                blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
+                priority
               />
             </div>
             <div className="mt-4">

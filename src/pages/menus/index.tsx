@@ -42,7 +42,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="canonical" href="https://beyondcatering.ae/" />
+        <link rel="canonical" href="https://beyondcatering.ae/menus" />
         <link rel="icon" type="image/png" href="/images/logo.png" />
         <link rel="preload" as="image" href="/images/Hero.jpg" />
         <link rel="preload" as="image" href="/images/blog3.jpg" />
@@ -52,12 +52,12 @@ export default function Home() {
         <meta property="og:description" content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences." />
         <meta property="og:url" content="https://beyondcatering.ae/" />
         <meta property="og:site_name" content="Beyond Catering" />
-        <meta property="og:image" content="https://beyondcatering.ae/images/Hero.jpg" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/Hero.webp" />
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Beyond Catering | Dubai’s Premier Culinary Experience" />
         <meta name="twitter:description" content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences." />
-        <meta name="twitter:image" content="https://beyondcatering.ae/images/Hero.jpg" />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/Hero.webp" />
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
@@ -67,14 +67,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen w-full font-serif" aria-label="Hero Section" role="region">
         <Image
-          src="/images/Hero.jpg"
+          src="/images/Hero.webp"
           alt="Beyond Catering Hero"
           fill
           priority
           quality={85}
           sizes="100vw"
           placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
           className="absolute inset-0 object-cover w-full h-full"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -142,7 +142,7 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-101 transition-transform duration-300">
                 <Image
-                  src="/images/blog3.jpg"
+                  src="/images/blog3.webp"
                   alt="Gourmet Plate"
                   width={800}
                   height={600}
@@ -150,7 +150,7 @@ export default function Home() {
                   quality={85}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                  blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
                   priority
                 />
               </div>

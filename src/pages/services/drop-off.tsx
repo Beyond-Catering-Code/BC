@@ -60,7 +60,6 @@ const DropOffCateringPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/drop-off-catering" />
-        <link rel="preload" as="image" href="/images/dropoff2.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -103,7 +102,7 @@ const DropOffCateringPage = () => {
                   Drop Off Catering
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600">
-                  We cook and deliver delicious, freshly prepared meals directly to your location. Our drop-off service includes the option to professionally arrange your buffet area, allowing you to focus on your guests. Simply choose from our extensive menu options, and we'll take care of the rest, bringing restaurant-quality cuisine to your event with minimal fuss and maximum flavor.
+                  We cook and deliver delicious, freshly prepared meals directly to your location. Our drop-off service includes the option to professionally arrange your buffet area, allowing you to focus on your guests. Simply choose from our extensive menu options, and we’ll take care of the rest, bringing restaurant-quality cuisine to your event with minimal fuss and maximum flavor.
                 </p>
                 <button className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-md font-semibold transition duration-200">
                   View Menu Options
@@ -116,11 +115,10 @@ const DropOffCateringPage = () => {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={90}
-                  priority
+                  quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  loading="eager"
+                  blurDataURL="data:image/webp;base64,UklGRhoCAABXRUJQVlA4WAoAAAASAAAAEAAA"
+                  priority
                 />
               </div>
             </div>
