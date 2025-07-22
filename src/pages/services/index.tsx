@@ -35,21 +35,21 @@ const services = [
   {
     title: 'Corporate Catering',
     description: 'Impress your clients and colleagues with our professional corporate catering services.',
-    image: '/images/corporate.jpg',
+    image: '/images/corporate.webp',
     href: '/services/corporate',
     icon: ChefHat,
   },
   {
     title: 'Private Events Catering',
     description: 'Make your special occasions unforgettable with our bespoke catering services.',
-    image: '/images/private.jpg',
+    image: '/images/private.webp',
     href: '/services/private',
     icon: Cake,
   },
   {
     title: 'Drop off Catering',
     description: 'Convenient and delicious catering solutions delivered right to your location.',
-    image: '/images/dropoff.jpg',
+    image: '/images/dropoff.webp',
     href: '/services/drop-off',
     icon: Box,
   },
@@ -80,7 +80,7 @@ const ServicesPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/services" />
-        <link rel="preload" as="image" href="/images/corporate.webp" />
+        <link rel="preload" as="image" href="/images/corporate.webp" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/private.webp" />
         <link rel="preload" as="image" href="/images/dropoff.webp" />
 
@@ -130,10 +130,11 @@ const ServicesPage = () => {
                     fill
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    quality={85}
+                    quality={90}
                     priority={service.title === 'Corporate Catering'}
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    loading={service.title === 'Corporate Catering' ? 'eager' : 'lazy'}
                   />
                   <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
                   <div className="relative z-10 p-8 flex flex-col justify-center h-full text-white items-center text-center">

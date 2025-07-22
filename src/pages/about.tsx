@@ -33,6 +33,8 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/about" />
         <link rel="icon" type="image/png" href="/images/logo.png" />
+        <link rel="preload" as="image" href="/images/private.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/blog.webp" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -65,15 +67,16 @@ const AboutPage = () => {
         >
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/private.jpg"
+              src="/images/private.webp"
               alt="Our team at a catering event"
               fill
               className="object-cover"
-              quality={85}
+              quality={90}
               sizes="100vw"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               priority
+              loading="eager"
             />
             <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
           </div>
@@ -121,15 +124,16 @@ const AboutPage = () => {
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/blog.jpg"
+                src="/images/blog.webp"
                 alt="Elaborate food platter"
                 fill
                 className="object-cover"
-                quality={85}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                 priority={false}
+                loading="lazy"
               />
             </div>
           </div>

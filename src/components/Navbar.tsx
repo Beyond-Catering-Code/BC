@@ -69,7 +69,7 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center justify-center flex-1 gap-12 text-[14px] sm:text-[15px] font-semibold tracking-wide text-gray-800">
-              <Link href="/about" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">About</Link>
+
 
               {/* Menus Dropdown */}
               <div
@@ -162,14 +162,7 @@ const Navbar = () => {
 
             <div className="flex flex-col">
               {/* Main Navigation Links */}
-              <Link 
-                href="/about" 
-                onClick={closeMobileMenu} 
-                className="px-8 py-5 text-lg font-playfair text-gray-800 border-b border-gray-100 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group"
-              >
-                <span>About</span>
-                <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
-              </Link>
+              
 
               {/* Menus Section */}
               <div className="border-b border-gray-200">
