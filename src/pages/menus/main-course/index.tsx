@@ -71,7 +71,7 @@ const MainCoursePage = () => {
         role="region"
       >
         <div
-          className="absolute inset-0 opacity-10 bg-[url('/menus/maincourse.jpg')] bg-cover bg-center"
+          className="absolute inset-0 opacity-10 bg-[url('/menus/main-course.jpg')] bg-cover bg-center"
           aria-hidden="true"
         />
         <div className="relative z-10 max-w-7xl mx-auto text-center">

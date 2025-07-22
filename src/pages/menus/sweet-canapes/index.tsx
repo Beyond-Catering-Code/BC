@@ -71,7 +71,7 @@ const SweetCanapesPage = () => {
         role="region"
       >
         <div
-          className="absolute inset-0 opacity-10 bg-[url('/menus/sweet.jpg')] bg-cover bg-center"
+          className="absolute inset-0 opacity-10 bg-[url('/menus/sweetCanapes.jpg')] bg-cover bg-center"
           aria-hidden="true"
         />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -112,7 +112,7 @@ const SweetCanapesPage = () => {
           <div className="lg:w-1/2">
             <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden border-4 border-[#D4AF37] shadow-2xl">
               <Image
-                src="/images/sweetcanapes.webp"
+                src="/images/sweet.webp"
                 alt="Sweet canapés beautifully plated for Dubai dessert catering"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
