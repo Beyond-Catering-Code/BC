@@ -26,9 +26,16 @@ export default function Home() {
   const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'page_view',
+      pagePath: window.location.pathname,
+    });
+
     const timeout = setTimeout(() => {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     }, 7000);
+
     return () => clearTimeout(timeout);
   }, []);
 
@@ -92,6 +99,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <style jsx global>{`
         @keyframes fadeUp {
           0% { opacity: 0; transform: translateY(40px);}
@@ -283,6 +291,13 @@ export default function Home() {
             ))}
           </div>
         </div>
+        useEffect(() => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'page_view',
+    pagePath: window.location.pathname,
+  });
+}, []);
       </section>
     </>
   );
