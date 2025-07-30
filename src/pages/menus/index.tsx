@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
-// Structured Data for SEO (JSON-LD)
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -27,50 +27,43 @@ const structuredData = {
 const menuSections = [
   {
     title: 'Salads',
-    description:
-      'Buffet-style, light and fresh. The perfect vegetarian or side pairing for your main course. From Kale Caesar to Roasted Chickpea, every salad is handcrafted to impress.',
+    description: 'Buffet-style, light and fresh. The perfect vegetarian or side pairing for your main course. From Kale Caesar to Roasted Chickpea, every salad is handcrafted to impress.',
     link: '/menus/salads',
     image: 'salad.webp',
   },
   {
     title: 'Cold Canapés',
-    description:
-      'Elegant and bite-sized. Ideal for the beginning of your event. Choose from vibrant tomato tartlets to indulgent crab bites, all served chilled.',
+    description: 'Elegant and bite-sized. Ideal for the beginning of your event. Choose from vibrant tomato tartlets to indulgent crab bites, all served chilled.',
     link: '/menus/cold-canapes',
     image: 'cold-canapes.webp',
   },
   {
     title: 'Hot Canapés',
-    description:
-      'Fresh from the kitchen and designed to delight. Our hot canapés bring bold flavors and heartwarming presentation to any event.',
+    description: 'Fresh from the kitchen and designed to delight. Our hot canapés bring bold flavors and heartwarming presentation to any event.',
     link: '/menus/hot-canapes',
     image: 'hot-canapes.webp',
   },
   {
     title: 'Sweet Canapés',
-    description:
-      'End your event on a sweet note. These handcrafted bites are the perfect finale to your celebration. Indulgent, elegant, unforgettable.',
+    description: 'End your event on a sweet note. These handcrafted bites are the perfect finale to your celebration. Indulgent, elegant, unforgettable.',
     link: '/menus/sweet-canapes',
     image: 'sweetCanapes.webp',
   },
   {
     title: 'Main Course',
-    description:
-      'From roasted chicken to slow-braised brisket and seafood paella. Our curated mains balance flavor, nutrition, and portion for a standout dining experience.',
+    description: 'From roasted chicken to slow-braised brisket and seafood paella. Our curated mains balance flavor, nutrition, and portion for a standout dining experience.',
     link: '/menus/main-course',
     image: 'main-course.webp',
   },
   {
     title: 'Platters',
-    description:
-      'Perfect for sharing. Artisanal cheese boards, mezze spreads, burger baskets, and more. Receive your guests with an impressive selection.',
+    description: 'Perfect for sharing. Artisanal cheese boards, mezze spreads, burger baskets, and more. Receive your guests with an impressive selection.',
     link: '/menus/platters',
     image: 'platter.webp',
   },
   {
     title: 'Bowl & Fork',
-    description:
-      'A great way to receive your guests after the canapé service. Nice portions inside our delight bowls, from truffle pasta to miso black cod.',
+    description: 'A great way to receive your guests after the canapé service. Nice portions inside our delight bowls, from truffle pasta to miso black cod.',
     link: '/menus/bowl-fork',
     image: 'bowl.webp',
   },
@@ -94,40 +87,25 @@ const MenusPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://beyondcatering.ae/menus" />
-        
-        {/* Preload critical menu images */}
         <link rel="preload" as="image" href="/menus/salad.webp" />
         <link rel="preload" as="image" href="/menus/cold-canapes.webp" />
-
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Menus - Beyond Catering | Curated Event Menus Dubai" />
         <meta property="og:description" content="Explore curated event menus for Dubai. Elegant canapés, salads, mains, platters, and more." />
         <meta property="og:url" content="https://beyondcatering.ae/menus" />
         <meta property="og:site_name" content="Beyond Catering" />
         <meta property="og:image" content="https://beyondcatering.ae/menus/salad.webp" />
-
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Menus - Beyond Catering | Curated Event Menus Dubai" />
         <meta name="twitter:description" content="Signature event menus for Dubai. Salads, canapés, mains, and more." />
         <meta name="twitter:image" content="https://beyondcatering.ae/menus/salad.webp" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section
-        className="w-full bg-[#0B1120] text-white px-4 sm:px-6 py-16 sm:py-24"
-        aria-label="Menus Overview"
-        role="region"
-      >
+      {/* Hero Section */}
+      <section className="w-full bg-[#0B1120] text-white px-4 sm:px-6 py-16 sm:py-24" aria-label="Menus Overview" role="region">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold font-[Playfair Display] mb-6">
             Our Menus
@@ -140,7 +118,7 @@ const MenusPage = () => {
         </div>
       </section>
 
-      {/* MENU GRID */}
+      {/* Menu Grid */}
       <main
         ref={scrollRef}
         className="bg-white pt-16 sm:pt-24 pb-16 sm:pb-24 px-4 sm:px-10 font-sans"

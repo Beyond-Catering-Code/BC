@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 
-// Structured Data (JSON-LD) for SEO
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -46,19 +45,16 @@ export default function Home() {
         <link rel="icon" type="image/png" href="/images/logo.png" />
         <link rel="preload" as="image" href="/images/Hero.webp" />
         <link rel="preload" as="image" href="/images/blog3.webp" />
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Beyond Catering | Dubai’s Premier Culinary Experience" />
         <meta property="og:description" content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences." />
         <meta property="og:url" content="https://beyondcatering.ae/" />
         <meta property="og:site_name" content="Beyond Catering" />
         <meta property="og:image" content="https://beyondcatering.ae/images/Hero.webp" />
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Beyond Catering | Dubai’s Premier Culinary Experience" />
         <meta name="twitter:description" content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences." />
         <meta name="twitter:image" content="https://beyondcatering.ae/images/Hero.webp" />
-        {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
