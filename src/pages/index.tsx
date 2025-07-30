@@ -25,12 +25,19 @@ const structuredData = {
 export default function Home() {
   const [showArrow, setShowArrow] = useState(false);
 
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'page_view',
-      pagePath: window.location.pathname,
-    });
+useEffect(() => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'page_view',
+    pagePath: window.location.pathname,
+  });
+
+  const timeout = setTimeout(() => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  }, 7000);
+
+  return () => clearTimeout(timeout);
+}, []);
 
     const timeout = setTimeout(() => {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
