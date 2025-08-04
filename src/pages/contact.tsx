@@ -25,7 +25,7 @@ const structuredData = {
 const ContactPage = () => {
   const [dialog, setDialog] = useState({ open: false, message: '', success: true });
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target;
     const data = {
