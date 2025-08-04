@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
 
-// Structured Data for SEO (JSON-LD)
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
@@ -41,10 +40,10 @@ const ContactPage = () => {
         <meta name="twitter:title" content="Contact Us - Beyond Catering" />
         <meta name="twitter:description" content="Contact Beyond Catering for event catering, bookings, and customer support in Dubai." />
         <meta name="twitter:image" content="https://beyondcatering.ae/images/contact1.jpg" />
-        {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
       <Navbar />
+
       
       {/* Hero Section */}
       <section

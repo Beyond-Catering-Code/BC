@@ -22,22 +22,28 @@ const structuredData = {
   }
 };
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export default function Home() {
   const [showArrow, setShowArrow] = useState(false);
 
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'page_view',
-      pagePath: window.location.pathname,
-    });
+useEffect(() => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'page_view',
+    pagePath: window.location.pathname,
+  });
 
-    const timeout = setTimeout(() => {
-      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-    }, 7000);
+  const timeout = setTimeout(() => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  }, 7000);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  return () => clearTimeout(timeout);
+}, []);
 
   return (
     <>
@@ -50,8 +56,6 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff" />
         <link rel="canonical" href="https://beyondcatering.ae/" />
         <link rel="icon" type="image/png" href="/images/logo.png" />
-        <link rel="preload" as="image" href="/images/Hero.webp" />
-        <link rel="preload" as="image" href="/images/blog3.webp" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Beyond Catering | Dubai’s Premier Culinary Experience" />
         <meta property="og:description" content="Where luxury meets flavor. Discover the artistry of bespoke catering experiences." />
@@ -288,14 +292,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        useEffect(() => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'page_view',
-    pagePath: window.location.pathname,
-  });
-}, []);
       </section>
-    </>
+        </>
   );
 }
