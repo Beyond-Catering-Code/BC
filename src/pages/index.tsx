@@ -25,14 +25,19 @@ const structuredData = {
 export default function Home() {
   const [showArrow, setShowArrow] = useState(false);
 
-useEffect(() => {
-  const timeout = setTimeout(() => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  }, 7000);
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'page_view',
+      pagePath: window.location.pathname,
+    });
 
-  return () => clearTimeout(timeout);
-  
-}, []);
+    const timeout = setTimeout(() => {
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    }, 7000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <>
@@ -62,7 +67,7 @@ useEffect(() => {
 
       <Navbar />
 
-      {/* Hero Section */}
+      {/* HERO */}
       <section className="relative h-screen w-full font-serif" aria-label="Hero Section" role="region">
         <Image
           src="/images/Hero.webp"
@@ -72,7 +77,7 @@ useEffect(() => {
           quality={85}
           sizes="100vw"
           placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
           className="absolute inset-0 object-cover w-full h-full"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -85,7 +90,7 @@ useEffect(() => {
               Gourmet experiences crafted for Dubai’s elite gatherings.
             </p>
             <a
-              href="/book"
+              href="/contact#form"
               className="mt-6 inline-block bg-white text-black font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-200 transition"
               aria-label="Book a Tasting"
             >
@@ -102,11 +107,10 @@ useEffect(() => {
         }
       `}</style>
 
-      {/* Outstanding Catering Section */}
+      {/* OUTSTANDING CATERING SECTION */}
       <section className="bg-white py-32 px-6 sm:px-10" aria-label="Outstanding Catering" role="region">
         <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16">
           <div className="text-left md:flex-1 space-y-8">
-            {/* Main Heading */}
             <div className="space-y-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight font-playfair">
                 Outstanding Catering
@@ -116,14 +120,12 @@ useEffect(() => {
             <p className="text-xl sm:text-2xl text-gray-700 max-w-2xl leading-relaxed font-light">
               From corporate galas to private soirées, our bespoke menus and white-glove service bring sophistication to every table.
             </p>
-            <div className="space-y-6">
-              <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
-                Every event tells a story, and we craft culinary narratives that leave lasting impressions. Our team of master chefs transforms the finest ingredients into artful experiences, while our dedicated service staff ensures flawless execution from first bite to final toast.
-              </p>
-            </div>
+            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+              Every event tells a story, and we craft culinary narratives that leave lasting impressions...
+            </p>
             <div className="pt-4">
               <a
-                href="/book"
+                href="/contact#form"
                 className="inline-flex items-center bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 aria-label="Book a Tasting Experience"
               >
@@ -137,22 +139,22 @@ useEffect(() => {
               </p>
             </div>
           </div>
+
+          {/* IMAGE */}
           <div className="md:flex-1 w-full max-w-md sm:max-w-lg lg:max-w-xl">
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-101 transition-transform duration-300">
-                <Image
-                  src="/images/blog3.jpg"
-                  alt="Gourmet Plate"
-                  width={800}
-                  height={600}
-                  className="rounded-2xl object-cover"
-                  quality={85}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  priority
-                />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-101 transition-transform duration-300">
+              <Image
+                src="/images/blog3.jpg"
+                alt="Gourmet Plate"
+                width={800}
+                height={600}
+                className="rounded-2xl object-cover"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+                priority
+              />
             </div>
           </div>
         </div>
