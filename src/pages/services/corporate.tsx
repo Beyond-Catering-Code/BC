@@ -149,9 +149,11 @@ const CorporateCateringPage = () => {
                 <p className="text-base sm:text-lg text-gray-600">
                   We partner with companies to design and execute tailored food programs that enhance workplace dining. From concept to rollout, we manage every detail, whether it's daily meal delivery or a full canteen setup. We ensure a seamless, branded experience from the first bite to the final bill.
                 </p>
+                <Link href="/contact#contactForm" passHref>
                 <button className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-md font-semibold transition duration-200">
                   Get a Custom Quote
                 </button>
+                </Link>
               </div>
               <div className="relative h-64 sm:h-96 rounded-lg overflow-hidden shadow-lg">
                                   <Image
@@ -352,12 +354,14 @@ const CorporateCateringPage = () => {
             <h2 className="text-2xl sm:text-3xl font-bold">Ready to Elevate Your Workplace Dining?</h2>
             <p className="mt-4 max-w-2xl mx-auto">Contact us today for a customized catering solution.</p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <button className="inline-flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-200 px-6 py-3 rounded-md font-semibold transition">
-                <Phone size={18} /> Call Us
-              </button>
-              <button className="inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition">
-                <Mail size={18} /> Contact Us
-              </button>
+<Link href="/contact#contactForm" passHref>
+  <button
+    className="inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition"
+    type="button"
+  >
+    <Mail size={18} /> Contact Us
+  </button>
+</Link>
             </div>
           </div>
         </section>

@@ -104,9 +104,11 @@ const DropOffCateringPage = () => {
                 <p className="text-base sm:text-lg text-gray-600">
                   We cook and deliver delicious, freshly prepared meals directly to your location. Our drop-off service includes the option to professionally arrange your buffet area, allowing you to focus on your guests. Simply choose from our extensive menu options, and we’ll take care of the rest, bringing restaurant-quality cuisine to your event with minimal fuss and maximum flavor.
                 </p>
+                <Link href="/contact#contactForm" passHref>
                 <button className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-md font-semibold transition duration-200">
-                  View Menu Options
+                  Get in Touch
                 </button>
+                </Link>
               </div>
               <div className="relative h-64 sm:h-96 rounded-lg overflow-hidden shadow-lg">
                 <Image
@@ -367,11 +369,6 @@ const DropOffCateringPage = () => {
                 </ul>
               </div>
             </div>
-            <div className="mt-12">
-              <button className="bg-gray-800 text-white hover:bg-gray-700 px-8 py-3 rounded-md font-semibold transition">
-                Request Full Menu
-              </button>
-            </div>
           </div>
         </section>
 
@@ -387,12 +384,11 @@ const DropOffCateringPage = () => {
               Contact us today to discuss your menu options and delivery details.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <button className="inline-flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-200 px-6 py-3 rounded-md font-semibold transition" aria-label="Call Beyond Catering">
-                <Phone size={18} /> Call Us
-              </button>
+              <Link href="/contact#contactForm" passHref>
               <button className="inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition" aria-label="Email Beyond Catering">
-                <Mail size={18} /> Email Order
+                <Mail size={18} /> Contact us
               </button>
+              </Link>
             </div>
           </div>
         </section>

@@ -103,7 +103,7 @@ const MainCoursePage = () => {
                 Whether plated or buffet style, our mains bring warmth, flavor, and presentation to your event.
               </p>
               <Link
-                href="/book-tasting"
+                href="/contact#form"
                 className="inline-block bg-[#D4AF37] text-white text-base sm:text-lg px-6 sm:px-7 py-2.5 sm:py-3 rounded-full transition-all hover:bg-[#b68c1f]"
                 aria-label="Book a Tasting Experience"
               >

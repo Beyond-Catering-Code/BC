@@ -71,43 +71,46 @@ useEffect(() => {
 
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative h-screen w-full font-serif" aria-label="Hero Section" role="region">
-        <Image
-          src="/images/Hero.webp"
-          alt="Beyond Catering Hero"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
-          className="absolute inset-0 object-cover w-full h-full"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex items-center justify-center text-center px-4 z-10">
-          <div className="opacity-0 translate-y-10 animate-[fadeUp_1.2s_ease-out_1s_forwards] max-w-3xl mx-auto">
-            <h1 className="text-white text-[2rem] sm:text-5xl md:text-6xl font-bold leading-tight">
-              Elevate Your Event<br />With Culinary Perfection
-            </h1>
-            <p className="mt-5 text-white/90 text-base sm:text-xl font-medium leading-relaxed">
-              Gourmet experiences crafted for Dubai’s elite gatherings.
-            </p>
-            <a
-              href="/contact#form"
-              className="mt-6 inline-block bg-white text-black font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-200 transition"
-              aria-label="Book a Tasting"
-            >
-              Book a Tasting
-            </a>
-          </div>
-        </div>
-      </section>
+  {/* HERO */}
+<section
+  className="relative h-screen w-full font-serif flex items-center justify-center text-center px-6 sm:px-10"
+  aria-label="Hero Section"
+  role="region"
+>
+  <Image
+    src="/images/Hero.webp"
+    alt="Beyond Catering Hero"
+    fill
+    priority
+    quality={85}
+    sizes="100vw"
+    placeholder="blur"
+    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+    className="absolute inset-0 object-cover w-full h-full"
+  />
+  <div className="absolute inset-0 bg-black/50" />
+
+  <div className="z-10 max-w-4xl mx-auto">
+    <h1 className="text-white text-[2.3rem] sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+      Elevate Your Event<br />With Culinary Perfection
+    </h1>
+    <p className="text-white/90 text-lg sm:text-xl font-medium leading-relaxed mb-8">
+      Gourmet experiences crafted for Dubai’s elite gatherings.
+    </p>
+    <a
+      href="/contact#form"
+      className="inline-block bg-white text-black font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-200 transition"
+      aria-label="Book a Tasting"
+    >
+      Book a Tasting
+    </a>
+  </div>
+</section>
 
       <style jsx global>{`
         @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(40px);}
-          100% { opacity: 1; transform: translateY(0);}
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
       `}</style>
 
@@ -124,9 +127,9 @@ useEffect(() => {
             <p className="text-xl sm:text-2xl text-gray-700 max-w-2xl leading-relaxed font-light">
               From corporate galas to private soirées, our bespoke menus and white-glove service bring sophistication to every table.
             </p>
-            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
-              Every event tells a story, and we craft culinary narratives that leave lasting impressions...
-            </p>
+<p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+  Every event tells a story, and we craft culinary narratives that leave lasting impressions. Our team of master chefs transforms the finest ingredients into artful experiences, while our dedicated service staff ensures flawless execution from first bite to final toast.
+</p>
             <div className="pt-4">
               <a
                 href="/contact#form"

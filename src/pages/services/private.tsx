@@ -137,9 +137,11 @@ const PrivateEventsPage = () => {
                 <p className="text-lg text-gray-600">
                   Whether it’s an intimate dinner, a milestone birthday, or a stylish garden gathering, we bring refined hospitality to your most special moments. Beyond Catering designs every private event with care — from elegant canapés and live stations to beautifully curated buffets. Our team works closely with you to craft a menu and setting that reflect your vision, so you can focus on hosting while we take care of every detail. Because your celebrations deserve to be effortless, memorable, and undeniably delicious.
                 </p>
+                <Link href="/contact#contactForm" passHref>
                 <button className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-md font-semibold transition duration-200" aria-label="Plan Your Event">
                   Plan Your Event
                 </button>
+                </Link>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
                 <Image
@@ -250,12 +252,11 @@ const PrivateEventsPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
             <h2 className="text-3xl font-bold">Ready to Plan Your Perfect Event?</h2>
             <div className="mt-8 flex justify-center gap-4">
-              <button className="inline-flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-200 px-6 py-3 rounded-md font-semibold transition" aria-label="Call Us">
-                <Phone size={18} /> Call Us
-              </button>
+             <Link href="/contact#contactForm" passHref>
               <button className="inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition" aria-label="Request a Quote">
                 Request a Quote
               </button>
+              </Link>
             </div>
           </div>
         </section>

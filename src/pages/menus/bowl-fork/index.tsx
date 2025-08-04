@@ -103,7 +103,7 @@ const BowlAndForkPage = () => {
                 From creamy risottos to aromatic biryanis and international fusions, it’s the ultimate way to keep guests nourished and impressed throughout your event.
               </p>
               <Link
-                href="/book-tasting"
+                href="/contact#form"
                 className="inline-block bg-[#D4AF37] text-white text-base sm:text-lg px-6 sm:px-7 py-2.5 sm:py-3 rounded-full transition-all hover:bg-[#b68c1f]"
                 aria-label="Book a Tasting Experience"
               >
@@ -114,7 +114,7 @@ const BowlAndForkPage = () => {
           <div className="lg:w-1/2">
             <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden border-4 border-[#D4AF37] shadow-2xl">
               <Image
-                src="/images/bowlFork.webp"
+                src="/menus/bowlFork.webp"
                 alt="Bowl & Fork dish beautifully presented for Dubai event catering"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}

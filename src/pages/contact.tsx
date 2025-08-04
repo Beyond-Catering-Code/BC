@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '@/components/Navbar';
 import Head from 'next/head';
@@ -22,6 +23,32 @@ const structuredData = {
 };
 
 const ContactPage = () => {
+  const [dialog, setDialog] = useState({ open: false, message: '', success: true });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      message: form.message.value,
+    };
+
+    const res = await fetch('/api/send-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      setDialog({ open: true, message: 'Message sent!', success: true });
+      form.reset();
+    } else {
+      setDialog({ open: true, message: 'Failed to send message.', success: false });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -45,7 +72,6 @@ const ContactPage = () => {
       </Head>
       <Navbar />
 
-      
       {/* Hero Section */}
       <section
         className="relative h-60 md:h-[400px] w-full overflow-hidden"
@@ -168,7 +194,32 @@ const ContactPage = () => {
         </div>
         <div className="relative z-10 py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <form id="form" className="bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-lg space-y-6" aria-label="Contact Form">
+            {/* Dialog/Modal for submission feedback */}
+            {dialog.open && (
+              <div className="fixed inset-0 flex items-center justify-center z-50">
+                <div className="bg-black/40 fixed inset-0" onClick={() => setDialog({ ...dialog, open: false })} />
+                <div className={`bg-white px-8 py-6 rounded-xl shadow-xl z-10 flex flex-col items-center
+                  ${dialog.success ? 'border-green-500' : 'border-red-500'} border-2`}>
+                  <span className={`mb-2 text-xl font-semibold ${dialog.success ? 'text-green-600' : 'text-red-600'}`}>
+                    {dialog.success ? 'Success' : 'Error'}
+                  </span>
+                  <span className="mb-4 text-gray-700">{dialog.message}</span>
+                  <button
+                    onClick={() => setDialog({ ...dialog, open: false })}
+                    className="px-4 py-2 bg-blue-900 text-white rounded-md font-semibold hover:bg-blue-800 transition"
+                  >
+                    OK
+                  </button>
+                </div>
+              </div>
+            )}
+
+            <form
+              id="form"
+              onSubmit={handleSubmit}
+              className="bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-lg space-y-6"
+              aria-label="Contact Form"
+            >
               <h2 className="text-3xl md:text-4xl font-extrabold text-black text-center mb-6">Online Form</h2>
               <div>
                 <label htmlFor="name" className="block text-md font-bold text-black mb-2">Your Name</label>
