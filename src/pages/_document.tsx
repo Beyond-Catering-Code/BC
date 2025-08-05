@@ -8,13 +8,13 @@ export default function Document() {
       <body>
         {/* GTM NOSCRIPT fallback */}
         <noscript>
-  <iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-PCX4MJSM"
-    height="0"
-    width="0"
-    style={{ display: 'none', visibility: 'hidden' }}
-  />
-</noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PCX4MJSM"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Main />
         <NextScript />
       </body>

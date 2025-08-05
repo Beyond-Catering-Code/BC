@@ -8,7 +8,7 @@ import Script from 'next/script';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* Define window.dataLayer BEFORE GTM loads */}
+      {/* GTM Initialization (Window dataLayer) */}
       <Script id="gtm-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -19,12 +19,23 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </Script>
 
-      {/* Load GTM script */}
+      {/* GTM Script */}
       <Script
         src="https://www.googletagmanager.com/gtm.js?id=GTM-PCX4MJSM"
         strategy="afterInteractive"
       />
 
+      {/* GTM Noscript fallback for non-JS browsers */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-PCX4MJSM"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
+
+      {/* Navbar and Footer */}
       <Navbar />
       <main>
         <Component {...pageProps} />

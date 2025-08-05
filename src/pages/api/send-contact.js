@@ -10,15 +10,15 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "mohammadmuzamel3@gmail.com",
-      pass: "bhnbhxuljaproplc",
+      user: "info@beyondcatering.ae",
+      pass: "cjeqhwmtvscdiyvu",
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"${name}" <mohammadmuzamel3@gmail.com>`, // your authenticated Gmail
-      to: "mohammadmuzamel3@gmail.com", // your receiving address
+      from: `"${name}" <info@beyondcatering.ae>`, // your authenticated Gmail
+      to: "info@beyondcatering.ae", // your receiving address
       replyTo: email, // customer's email (for reply)
       subject: "New Contact Form Submission",
       text: `

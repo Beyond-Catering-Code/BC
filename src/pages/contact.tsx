@@ -27,13 +27,12 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
+    const form = e.target;
     const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string,
-      message: formData.get('message') as string,
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      message: form.message.value,
     };
 
     const res = await fetch('/api/send-contact', {
@@ -54,7 +53,21 @@ const ContactPage = () => {
     <>
       <Head>
         <title>Contact Us - Beyond Catering</title>
-        {/* ...meta tags unchanged... */}
+        <meta name="description" content="Get in touch with Beyond Catering for premium catering services in Dubai. Contact us for inquiries, bookings, and feedback." />
+        <meta name="keywords" content="Contact Beyond Catering, Dubai catering contact, event catering inquiry, catering Dubai, food booking Dubai, catering phone number, catering email, catering location" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://beyondcatering.ae/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us - Beyond Catering" />
+        <meta property="og:description" content="Get in touch with Beyond Catering for premium catering services in Dubai. Contact us for inquiries, bookings, and feedback." />
+        <meta property="og:url" content="https://beyondcatering.ae/contact" />
+        <meta property="og:site_name" content="Beyond Catering" />
+        <meta property="og:image" content="https://beyondcatering.ae/images/contact1.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Beyond Catering" />
+        <meta name="twitter:description" content="Contact Beyond Catering for event catering, bookings, and customer support in Dubai." />
+        <meta name="twitter:image" content="https://beyondcatering.ae/images/contact1.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
       <Navbar />
@@ -147,25 +160,31 @@ const ContactPage = () => {
             </div>
 
             {/* Mail Us Card */}
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition" tabIndex={0} aria-label="Mail Us">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
-                  <Mail size={24} className="text-blue-900" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-blue-900">Mail Us</h4>
-                  <p className="text-sm text-gray-700">
-                    <a href="mailto:info@beyondcatering.ae" className="hover:text-blue-700">info@beyondcatering.ae</a>
-                  </p>
-                </div>
-              </div>
-            </div>
+{/* Mail Us Card */}
+<div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition" tabIndex={0} aria-label="Mail Us">
+  <div className="flex items-center gap-4">
+    <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+      <Mail size={24} className="text-blue-900" />
+    </div>
+    <div>
+      <h4 className="text-lg font-semibold text-blue-900">Mail Us</h4>
+      <p className="text-sm text-gray-700">
+        <a
+          href="mailto:info@beyondcatering.ae?subject=Inquiry&body=Hello%20Beyond%20Catering%20Team"
+          className="hover:text-blue-700"
+        >
+          info@beyondcatering.ae
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </section>
 
       {/* Online Form Section */}
- <section className="relative overflow-hidden" aria-label="Online Contact Form" role="region">
+      <section className="relative overflow-hidden" aria-label="Online Contact Form" role="region">
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/images/contact2.webp"
@@ -215,7 +234,7 @@ const ContactPage = () => {
                   id="name"
                   name="name"
                   placeholder="Enter your name"
-                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600"
+                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600 text-black"
                   required
                   aria-required="true"
                   autoComplete="name"
@@ -228,7 +247,7 @@ const ContactPage = () => {
                   id="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600"
+                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600 text-black"
                   required
                   aria-required="true"
                   autoComplete="email"
@@ -241,7 +260,7 @@ const ContactPage = () => {
                   id="phone"
                   name="phone"
                   placeholder="Enter your phone number"
-                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600"
+                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600 text-black"
                   autoComplete="tel"
                 />
               </div>
@@ -252,7 +271,7 @@ const ContactPage = () => {
                   name="message"
                   placeholder="Enter your message"
                   rows={5}
-                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600"
+                  className="w-full p-3 border border-black rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-600 text-black"
                   required
                   aria-required="true"
                 ></textarea>
@@ -270,8 +289,7 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <Footer /> */}
+      <footer />
     </>
   );
 };
