@@ -25,15 +25,16 @@ const structuredData = {
 const ContactPage = () => {
   const [dialog, setDialog] = useState({ open: false, message: '', success: true });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      message: form.message.value,
-    };
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const form = e.target as HTMLFormElement;
+  const data = {
+    name: (form.elements.namedItem('name') as HTMLInputElement).value,
+    email: (form.elements.namedItem('email') as HTMLInputElement).value,
+    phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+    message: (form.elements.namedItem('message') as HTMLInputElement).value,
+  };
+  // ... rest is the same
 
     const res = await fetch('/api/send-contact', {
       method: 'POST',
