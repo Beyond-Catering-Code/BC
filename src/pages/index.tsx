@@ -37,12 +37,6 @@ useEffect(() => {
     event: 'page_view',
     pagePath: window.location.pathname,
   });
-
-  const timeout = setTimeout(() => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  }, 7000);
-
-  return () => clearTimeout(timeout);
 }, []);
 
   return (
