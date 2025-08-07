@@ -54,7 +54,7 @@ const Footer = () => {
             {/* Google Maps Button */}
             <div className="mt-4">
               <Link
-                href="https://www.google.com/maps/dir/?api=1&destination=Beyond+Catering%2C+Warehouse+29+-+Al+Quoz+-+Al+Quoz+Industrial+Area+1+-+Dubai"
+                href="https://www.google.com/maps/dir/?api=1&destination=Warehouse+29+-+Al+Quoz+-+Al+Quoz+Industrial+Area+1+-+Dubai"
                 className="inline-flex items-center bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
