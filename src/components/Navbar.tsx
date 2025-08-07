@@ -99,7 +99,9 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-3">
-              <Link href="/contact#form" className="bg-[#D4AF37] text-white hover:bg-[#C7A12F] px-4 py-2 md:px-6 md:py-3 rounded-md text-xs md:text-base font-semibold transition duration-300 ease-in-out">Book a Tasting</Link>
+<Link href="/contact#form" className="bg-yellow-500 text-white hover:bg-yellow-600 px-4 py-2 md:px-6 md:py-3 rounded-md text-xs md:text-base font-semibold transition duration-300 ease-in-out">
+  Book a Tasting
+</Link>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="mobile-menu-button md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group relative z-50 cursor-pointer touch-manipulation" aria-label="Toggle mobile menu" type="button">
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
