@@ -93,8 +93,14 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-
-              <Link href="/blog" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Blog</Link>
+<Link 
+  href="https://beyondcatering.ae/blog/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg"
+>
+  Blog
+</Link>
               <Link href="/contact" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Contact us</Link>
             </div>
 
