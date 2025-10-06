@@ -154,7 +154,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <h4 className="text-lg font-semibold text-blue-900">Call Us</h4>
                   <p className="text-sm text-gray-700">
                     <a href="tel:+971524823650" className="hover:text-blue-700">+971 52 482 3650</a><br />
-                    <a href="tel:+971553323562" className="hover:text-blue-700">+971 55 332 3562</a>
+                    <a href="tel:+971525138737" className="hover:text-blue-700">+971 52 513 8737</a>
                   </p>
                 </div>
               </div>
