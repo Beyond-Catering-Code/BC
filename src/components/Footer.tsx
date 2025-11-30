@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaWhatsapp } from 'react-icons/fa'; // Import WhatsApp icon from react-icons
 
 const Footer = () => {
   return (
@@ -41,30 +42,37 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="tel:+971524823650" className="text-yellow-500 hover:text-white">
-                  +971 52 482 3650
-                </Link>
-              </li>
-              <li>
                 <Link href="tel:+971525138737" className="text-yellow-500 hover:text-white">
                   +971 52 513 8737
+                </Link>
+              </li>
+              {/* WhatsApp Link */}
+              <li>
+                <Link
+                  href="https://wa.me/971525138737" // WhatsApp chat link
+                  className="inline-flex items-center text-yellow-500 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp className="mr-2 w-5 h-5" />
+                  Chat with us on WhatsApp
                 </Link>
               </li>
             </ul>
             {/* Google Maps Button */}
             <div className="mt-4">
-<Link
-  href="https://www.google.com/maps/dir/?api=1&destination=Beyond+Catering%2C+Warehouse+29+-+Al+Quoz+-+Al+Quoz+Industrial+Area+1+-+Dubai"
-  className="inline-flex items-center bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition-colors"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Get Directions"
->
-  <span>Get Directions</span>
-  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-</Link>
+              <Link
+                href="https://www.google.com/maps/dir/?api=1&destination=Beyond+Catering%2C+Warehouse+29+-+Al+Quoz+-+Al+Quoz+Industrial+Area+1+-+Dubai"
+                className="inline-flex items-center bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Directions"
+              >
+                <span>Get Directions</span>
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

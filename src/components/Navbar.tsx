@@ -61,15 +61,30 @@ const Navbar = () => {
       <nav className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-xl' : ''}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex-shrink-0">
-              <div className="relative h-10 w-40 sm:h-12 sm:w-48">
-                <Image src="/images/logo.png" alt="Beyond Catering" fill className="object-contain" priority />
-              </div>
-            </Link>
+            {/* Logo, now it's just an image with no link to Home */}
+            <div className="relative h-10 w-40 sm:h-12 sm:w-48">
+              <Image src="/images/logo.png" alt="Beyond Catering" fill className="object-contain" priority />
+            </div>
 
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 gap-12 text-[14px] sm:text-[15px] font-semibold tracking-wide text-gray-800">
-              <div className="relative" onMouseEnter={() => handleHover(setMenusOpen, menusTimeout, true)} onMouseLeave={() => { menusTimeout.current = setTimeout(() => setMenusOpen(false), 200); }}>
-                <Link href="/menus" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Menus</Link>
+              {/* Home Link */}
+              <Link href="/" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Home</Link>
+
+              {/* About Us Link */}
+              <Link href="/about" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">About Us</Link>
+
+              {/* Menus Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleHover(setMenusOpen, menusTimeout, true)}
+                onMouseLeave={() => {
+                  menusTimeout.current = setTimeout(() => setMenusOpen(false), 200);
+                }}
+              >
+                <Link href="/menus" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">
+                  Menu
+                </Link>
                 {menusOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-md bg-white shadow-xl z-50 transition-all duration-200">
                     <Link href="/menus/salads" className="block px-4 py-3 text-sm hover:bg-blue-100 transition text-center">Salads</Link>
@@ -83,7 +98,14 @@ const Navbar = () => {
                 )}
               </div>
 
-              <div className="relative" onMouseEnter={() => handleHover(setServicesOpen, servicesTimeout, true)} onMouseLeave={() => { servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200); }}>
+              {/* Services Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleHover(setServicesOpen, servicesTimeout, true)}
+                onMouseLeave={() => {
+                  servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200);
+                }}
+              >
                 <Link href="/services" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Services</Link>
                 {servicesOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-md bg-white shadow-xl z-50 transition-all duration-200">
@@ -93,22 +115,30 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-<Link 
-  href="https://beyondcatering.ae/blog/" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg"
->
-  Blog
-</Link>
-              <Link href="/contact" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Contact us</Link>
+
+              {/* Blog Link */}
+              <Link href="/blog" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Blog</Link>
+
+              {/* Contact Us Link */}
+              <Link href="/contact" className="hover:text-blue-800 transition-all font-playfair text-base sm:text-lg">Contact Us</Link>
             </div>
 
+            {/* Book Now Button on Right */}
             <div className="flex items-center gap-3">
-<Link href="/contact#form" className="bg-yellow-500 text-white hover:bg-yellow-600 px-4 py-2 md:px-6 md:py-3 rounded-md text-xs md:text-base font-semibold transition duration-300 ease-in-out">
-  Book a Tasting
-</Link>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="mobile-menu-button md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group relative z-50 cursor-pointer touch-manipulation" aria-label="Toggle mobile menu" type="button">
+              <Link
+                href="/contact#form"
+                className="bg-yellow-500 text-white hover:bg-yellow-600 px-4 py-2 md:px-6 md:py-3 rounded-md text-xs md:text-base font-semibold transition duration-300 ease-in-out"
+              >
+                Book your event now
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="mobile-menu-button md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none group relative z-50 cursor-pointer touch-manipulation"
+                aria-label="Toggle mobile menu"
+                type="button"
+              >
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
                 <span className={`w-6 h-0.5 bg-gray-800 group-hover:bg-[#D4AF37] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5 bg-[#D4AF37]' : ''}`}></span>
@@ -118,6 +148,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <>
           <div className="fixed top-16 left-0 right-0 bottom-0 bg-gradient-to-br from-black/60 via-blue-900/30 to-black/80 backdrop-blur-sm transition-opacity duration-300 z-40 md:hidden" onClick={closeMobileMenu}></div>
@@ -140,12 +171,12 @@ const Navbar = () => {
                 <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
               </Link>
               <Link href="/contact#form" onClick={closeMobileMenu} className="px-8 py-5 text-lg font-playfair text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-900 transition-all duration-200 flex items-center justify-between group">
-                <span>Contact us</span>
+                <span>Contact Us</span>
                 <span className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
               </Link>
               <div className="bg-gradient-to-r from-gray-50 to-blue-50/30 px-8 py-6 text-center border-t border-gray-200">
                 <p className="text-sm text-gray-600 mb-4 font-medium">Ready to create something extraordinary?</p>
-                <Link href="/contact#form" onClick={closeMobileMenu} className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 transform hover:scale-105">Book Your Tasting</Link>
+                <Link href="/contact#form" onClick={closeMobileMenu} className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 transform hover:scale-105">Book your event now</Link>
               </div>
             </div>
           </div>

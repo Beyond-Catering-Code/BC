@@ -102,17 +102,17 @@ useEffect(() => {
 
   <div className="z-10 max-w-4xl mx-auto">
     <h1 className="text-white text-[2.3rem] sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
-      Elevate Your Event<br />With Culinary Perfection
+      Tailored to Perfection — Catering Beyond Expectations
     </h1>
     <p className="text-white/90 text-lg sm:text-xl font-medium leading-relaxed mb-8">
-      Gourmet experiences crafted for Dubai’s elite gatherings.
+      Crafting moments that taste as good as they look – From Intimate Gatherings to grand celebrations.
     </p>
     <a
       href="/contact#form"
       className="inline-block bg-white text-black font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-200 transition"
       aria-label="Book a Tasting"
     >
-      Book a Tasting
+      Book your event now
     </a>
   </div>
 </section>
@@ -146,7 +146,7 @@ useEffect(() => {
                 className="inline-flex items-center bg-gradient-to-r from-[#D4AF37] to-[#C7A12F] text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-[#C7A12F] hover:to-[#B8941F] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 aria-label="Book a Tasting Experience"
               >
-                Book a Tasting Experience
+                Book your event now
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
